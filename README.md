@@ -32,6 +32,8 @@ The fetch script uses the Data Vic CKAN API, sorts active XLS resources by `peri
 
 Data Vic currently publishes December 2025 Quarter as the newest resource, but its Land Victoria XLS download can return HTTP 403 to automated static builds. The generated metadata preserves that published-latest resource separately, while the dashboard defaults to the newest workbook that the static pipeline can actually download and parse.
 
+If you manually download a blocked workbook, put it in the project root or `assets/source/` using the Data Vic filename, for example `median-house-q4-2025.xls`. Raw workbook files are ignored by git, and the fetch script will use the local workbook before trying the web URL.
+
 Assignment mode is the default:
 
 ```powershell

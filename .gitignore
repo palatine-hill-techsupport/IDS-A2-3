@@ -3,5 +3,7 @@ node_modules/
 .cache/
 dist/
 *.log
+*.xls
+*.xlsx
 brand-image.jpg
 assets/source/brand-image.jpg

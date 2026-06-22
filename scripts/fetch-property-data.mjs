@@ -8,6 +8,7 @@ const API_URL = `https://discover.data.vic.gov.au/api/3/action/package_show?id=$
 const SOURCE_URL = `https://discover.data.vic.gov.au/dataset/${PACKAGE_ID}`;
 const OUT_DIR = path.resolve("public", "data");
 const QUARTERS_DIR = path.join(OUT_DIR, "quarters");
+const LOCAL_WORKBOOK_DIRS = [process.cwd(), path.resolve("assets", "source")];
 
 const args = new Set(process.argv.slice(2));
 // CLASS_MODE is the assignment-safe default: row data is limited to exactly
@@ -262,8 +263,19 @@ async function fetchWithTimeout(url, options = {}, timeoutMs = 15000) {
 }
 
 async function downloadWorkbook(resource) {
+  const localAttempts = await localWorkbookPaths(resource);
   const attempts = [resource.url, ...(await archivedWorkbookUrls(resource.url))];
   const errors = [];
+
+  for (const localPath of localAttempts) {
+    try {
+      console.log(`Using local workbook override: ${path.relative(process.cwd(), localPath)}`);
+      const workbook = await readWorkbookFromFile(localPath);
+      return { workbook, resolvedUrl: `local:${path.relative(process.cwd(), localPath)}` };
+    } catch (error) {
+      errors.push(`${localPath}: ${error.message}`);
+    }
+  }
 
   for (const url of attempts) {
     try {
@@ -275,6 +287,55 @@ async function downloadWorkbook(resource) {
   }
 
   throw new Error(errors.join(" | "));
+}
+
+async function localWorkbookPaths(resource) {
+  const names = new Set();
+  const urlFileName = fileNameFromUrl(resource.url);
+  if (urlFileName) names.add(urlFileName);
+
+  const year = String(resource.period_end ?? "").slice(0, 4);
+  const quarter = quarterNumberFromPeriodEnd(resource.period_end);
+  if (year && quarter) {
+    names.add(`median-house-q${quarter}-${year}.xls`);
+    names.add(`median-house-q${quarter}-${year}.xlsx`);
+  }
+
+  const resourceSlug = normaliseHeader(resource.name ?? "").replace(/\s+/g, "-");
+  if (resourceSlug) {
+    names.add(`${resourceSlug}.xls`);
+    names.add(`${resourceSlug}.xlsx`);
+  }
+
+  const candidates = [];
+  for (const dir of LOCAL_WORKBOOK_DIRS) {
+    for (const name of names) candidates.push(path.resolve(dir, name));
+  }
+
+  const found = [];
+  for (const candidate of candidates) {
+    try {
+      await fs.access(candidate);
+      found.push(candidate);
+    } catch {
+      // Local workbook overrides are optional.
+    }
+  }
+  return found;
+}
+
+function fileNameFromUrl(url) {
+  try {
+    return path.basename(new URL(url).pathname);
+  } catch {
+    return null;
+  }
+}
+
+function quarterNumberFromPeriodEnd(periodEnd) {
+  const month = Number(String(periodEnd ?? "").slice(5, 7));
+  if (!month) return null;
+  return Math.ceil(month / 3);
 }
 
 async function archivedWorkbookUrls(url) {
@@ -312,6 +373,11 @@ async function downloadWorkbookFromUrl(url) {
     throw new Error(`Resource returned HTML instead of an XLS workbook (${contentType}).`);
   }
 
+  return XLSX.read(buffer, { type: "buffer", cellDates: true });
+}
+
+async function readWorkbookFromFile(filePath) {
+  const buffer = await fs.readFile(filePath);
   return XLSX.read(buffer, { type: "buffer", cellDates: true });
 }
 
