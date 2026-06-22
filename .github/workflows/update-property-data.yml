@@ -31,7 +31,7 @@ jobs:
         run: npm ci
 
       - name: Fetch and clean class dataset
-        run: npm run data:fetch
+        run: npm run data:fetch:quarters
 
       - name: Build static suburb centroid lookup
         run: npm run data:centroids

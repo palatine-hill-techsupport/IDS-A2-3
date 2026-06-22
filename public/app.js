@@ -1,6 +1,7 @@
 const dataUrl = new URL("./data/property-median-house-suburb.class.json", import.meta.url);
 const metadataUrl = new URL("./data/metadata.json", import.meta.url);
 const centroidsUrl = new URL("./data/suburb-centroids.json", import.meta.url);
+const quartersUrl = new URL("./data/property-median-house-suburb.quarters.json", import.meta.url);
 
 const currency = new Intl.NumberFormat("en-AU", {
   style: "currency",
@@ -40,8 +41,16 @@ const elements = {
   map: document.querySelector("#suburb-map"),
   mapCount: document.querySelector("#map-count"),
   mapLegend: document.querySelector("#map-legend"),
+  datasetMode: document.querySelector("#dataset-mode"),
+  quarterControl: document.querySelector("#quarter-control"),
+  quarterSelect: document.querySelector("#quarter-select"),
+  yearControl: document.querySelector("#year-control"),
+  yearSelect: document.querySelector("#year-select"),
+  dataWarning: document.querySelector("#data-warning"),
+  fullscreenMap: document.querySelector("#fullscreen-map"),
   changeModeButtons: document.querySelectorAll("[data-change-mode]"),
-  mapModeButtons: document.querySelectorAll("[data-map-mode]")
+  mapModeButtons: document.querySelectorAll("[data-map-mode]"),
+  sortButtons: document.querySelectorAll("[data-sort]")
 };
 
 const MELBOURNE_VIEW = {
@@ -56,8 +65,70 @@ const MAP_LABELS = [
   { name: "Bendigo", lat: -36.757, lon: 144.2794 },
   { name: "Mornington Peninsula", lat: -38.315, lon: 145.02 }
 ];
+const BASEMAP_BOUNDS = [
+  [-39.35, 140.75],
+  [-33.75, 150.25]
+];
+const LOCAL_BASEMAP = {
+  bay: [
+    [-37.82, 144.77],
+    [-37.92, 144.62],
+    [-38.12, 144.66],
+    [-38.31, 144.84],
+    [-38.39, 145.1],
+    [-38.29, 145.31],
+    [-38.07, 145.29],
+    [-37.9, 145.12],
+    [-37.82, 144.95]
+  ],
+  roads: [
+    [
+      [-37.82, 144.96],
+      [-37.9, 145.08],
+      [-38.02, 145.2],
+      [-38.14, 145.38]
+    ],
+    [
+      [-37.82, 144.96],
+      [-37.75, 144.84],
+      [-37.66, 144.68],
+      [-37.55, 144.48]
+    ],
+    [
+      [-37.72, 144.75],
+      [-37.69, 144.9],
+      [-37.72, 145.05],
+      [-37.82, 145.18]
+    ],
+    [
+      [-37.81, 144.96],
+      [-37.79, 145.08],
+      [-37.77, 145.22],
+      [-37.75, 145.36]
+    ]
+  ],
+  waterways: [
+    [
+      [-37.76, 144.82],
+      [-37.8, 144.9],
+      [-37.82, 144.97],
+      [-37.82, 145.05],
+      [-37.81, 145.16]
+    ]
+  ]
+};
 
 let mapState = null;
+const appState = {
+  allQuarters: [],
+  availableQuarters: [],
+  currentRows: [],
+  currentLabel: "",
+  currentMode: "quarter",
+  currentMapMode: "price",
+  sortField: "suburb",
+  sortDirection: "asc"
+};
 
 function escapeHtml(value) {
   return String(value ?? "")
@@ -228,6 +299,39 @@ function renderTable(rows) {
       `
     )
     .join("");
+  updateSortButtons();
+}
+
+function sortedRows(rows) {
+  const direction = appState.sortDirection === "asc" ? 1 : -1;
+  return [...rows].sort((a, b) => {
+    if (appState.sortField === "suburb") {
+      return a.suburb.localeCompare(b.suburb) * direction;
+    }
+    return (a[appState.sortField] - b[appState.sortField]) * direction;
+  });
+}
+
+function filteredRows() {
+  const query = elements.searchInput.value.trim().toLowerCase();
+  const rows = query
+    ? appState.currentRows.filter((row) => row.suburb.toLowerCase().includes(query))
+    : appState.currentRows;
+  return sortedRows(rows);
+}
+
+function updateSortButtons() {
+  elements.sortButtons.forEach((button) => {
+    const active = button.dataset.sort === appState.sortField;
+    button.classList.toggle("active", active);
+    button.classList.toggle("sort-asc", active && appState.sortDirection === "asc");
+    button.classList.toggle("sort-desc", active && appState.sortDirection === "desc");
+    button.dataset.direction = active ? appState.sortDirection : "";
+    button.setAttribute(
+      "aria-sort",
+      active ? (appState.sortDirection === "asc" ? "ascending" : "descending") : "none"
+    );
+  });
 }
 
 function interpolateHex(start, end, amount) {
@@ -304,54 +408,28 @@ function renderMapMarkers(mode = "price") {
   setActiveButton(elements.mapModeButtons, mode, "mapMode");
 }
 
-function initialiseMap(rows, centroidData) {
-  const L = window.L;
-  if (!L) {
-    elements.map.textContent = "Map library could not load.";
-    return;
-  }
-
+function mapRows(rows, centroidData) {
   const centroidBySuburb = new Map(
     centroidData.centroids.map((row) => [normaliseName(row.suburb), row])
   );
-  const mappedRows = rows
+  return rows
     .map((row) => ({ ...row, ...centroidBySuburb.get(normaliseName(row.suburb)) }))
     .filter((row) => Number.isFinite(row.lat) && Number.isFinite(row.lon));
+}
 
+function updateMapData(rows, centroidData) {
+  if (!mapState) return;
+  const { L, map, markerLayer } = mapState;
+  const mappedRows = mapRows(rows, centroidData);
   elements.mapCount.textContent = `${mappedRows.length} of ${rows.length} suburbs plotted. The map opens on Greater Melbourne; pan or zoom out for regional suburbs.`;
-
-  const map = L.map(elements.map, {
-    attributionControl: false,
-    markerZoomAnimation: false,
-    maxZoom: 12,
-    minZoom: 7,
-    // Canvas keeps the 700+ suburb points responsive without hundreds of SVG nodes.
-    renderer: L.canvas({ padding: 0.35, tolerance: 8 }),
-    scrollWheelZoom: false,
-    tap: false,
-    preferCanvas: true
-  }).setView(MELBOURNE_VIEW.center, MELBOURNE_VIEW.zoom);
-  map.createPane("labelPane");
-  map.getPane("labelPane").style.zIndex = 650;
-  map.getPane("labelPane").style.pointerEvents = "none";
-
-  const layer = L.layerGroup().addTo(map);
-  const bounds = L.latLngBounds(mappedRows.map((row) => [row.lat, row.lon]));
+  markerLayer.clearLayers();
   const prices = mappedRows.map((row) => row.median_price);
   const changes = mappedRows.map((row) => row.annual_change_pct);
-
-  mapState = {
-    L,
-    map,
-    layer,
-    mappedRows,
-    markers: [],
-    priceExtent: { min: Math.min(...prices), max: Math.max(...prices) },
-    changeExtent: { min: Math.min(...changes), max: Math.max(...changes) }
-  };
-
+  mapState.mappedRows = mappedRows;
+  mapState.priceExtent = { min: Math.min(...prices), max: Math.max(...prices) };
+  mapState.changeExtent = { min: Math.min(...changes), max: Math.max(...changes) };
   mapState.markers = mappedRows.map((row) => {
-    const style = mapMarkerStyle(row, "price", mapState.priceExtent, mapState.changeExtent);
+    const style = mapMarkerStyle(row, appState.currentMapMode, mapState.priceExtent, mapState.changeExtent);
     const marker = L.circleMarker([row.lat, row.lon], {
       ...style,
       bubblingMouseEvents: false,
@@ -365,10 +443,100 @@ function initialiseMap(rows, centroidData) {
         sticky: true
       })
       .bindPopup(popupHtml(row))
-      .addTo(layer);
+      .addTo(markerLayer);
 
     return { marker, row };
   });
+  renderMapMarkers(appState.currentMapMode);
+}
+
+function initialiseMap(rows, centroidData) {
+  const L = window.L;
+  if (!L) {
+    elements.map.textContent = "Map library could not load.";
+    return;
+  }
+
+  const map = L.map(elements.map, {
+    markerZoomAnimation: false,
+    maxZoom: 12,
+    minZoom: 7,
+    // Canvas keeps the 700+ suburb points responsive without hundreds of SVG nodes.
+    renderer: L.canvas({ padding: 0.35, tolerance: 8 }),
+    scrollWheelZoom: false,
+    tap: false,
+    preferCanvas: true
+  }).setView(MELBOURNE_VIEW.center, MELBOURNE_VIEW.zoom);
+  map.createPane("labelPane");
+  map.createPane("localBasemapPane");
+  map.getPane("localBasemapPane").style.zIndex = 250;
+  map.getPane("localBasemapPane").style.pointerEvents = "none";
+  map.getPane("labelPane").style.zIndex = 650;
+  map.getPane("labelPane").style.pointerEvents = "none";
+
+  L.imageOverlay("assets/victoria-basemap.svg", BASEMAP_BOUNDS, {
+    pane: "localBasemapPane",
+    opacity: 0.82,
+    interactive: false
+  }).addTo(map);
+
+  const basemapRenderer = L.svg({ pane: "localBasemapPane", padding: 0.5 });
+  L.polygon(LOCAL_BASEMAP.bay, {
+    pane: "localBasemapPane",
+    renderer: basemapRenderer,
+    color: "#78aebe",
+    weight: 2,
+    fillColor: "#b6dbe5",
+    fillOpacity: 0.82,
+    interactive: false
+  }).addTo(map);
+  LOCAL_BASEMAP.roads.forEach((road) => {
+    L.polyline(road, {
+      pane: "localBasemapPane",
+      renderer: basemapRenderer,
+      color: "#d1a35f",
+      weight: 5,
+      opacity: 0.9,
+      interactive: false
+    }).addTo(map);
+  });
+  LOCAL_BASEMAP.waterways.forEach((waterway) => {
+    L.polyline(waterway, {
+      pane: "localBasemapPane",
+      renderer: basemapRenderer,
+      color: "#6fa8ba",
+      weight: 3,
+      opacity: 0.92,
+      interactive: false
+    }).addTo(map);
+  });
+
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+    maxZoom: 12,
+    minZoom: 7,
+    attribution: "Tiles &copy; Esri, OpenStreetMap contributors"
+  }).addTo(map);
+
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}", {
+    maxZoom: 12,
+    minZoom: 7,
+    pane: "labelPane",
+    attribution: "Labels &copy; Esri"
+  }).addTo(map);
+
+  const markerLayer = L.layerGroup().addTo(map);
+  const labelLayer = L.layerGroup().addTo(map);
+
+  mapState = {
+    L,
+    map,
+    markerLayer,
+    labelLayer,
+    mappedRows: [],
+    markers: [],
+    priceExtent: { min: 0, max: 1 },
+    changeExtent: { min: -1, max: 1 }
+  };
 
   MAP_LABELS.forEach((label) => {
     L.marker([label.lat, label.lon], {
@@ -381,10 +549,11 @@ function initialiseMap(rows, centroidData) {
       interactive: false,
       keyboard: false,
       pane: "labelPane"
-    }).addTo(layer);
+    }).addTo(labelLayer);
   });
 
-  renderMapMarkers("price");
+  updateMapData(rows, centroidData);
+  const bounds = L.latLngBounds(mapRows(rows, centroidData).map((row) => [row.lat, row.lon]));
   if (bounds.isValid()) map.setMaxBounds(bounds.pad(0.35));
 
   const refreshMapSize = () => map.invalidateSize({ pan: false });
@@ -429,6 +598,108 @@ function renderMetadata(metadata) {
   elements.resourceName.textContent = metadata.resource_name ?? "Unknown resource";
 }
 
+function yearFromQuarter(quarter) {
+  return quarter.period_end ? new Date(`${quarter.period_end}T00:00:00`).getFullYear() : null;
+}
+
+function populateDataControls(quarterManifest) {
+  appState.allQuarters = quarterManifest.quarters ?? [];
+  appState.availableQuarters = appState.allQuarters.filter((quarter) => quarter.available && quarter.rows?.length);
+
+  elements.quarterSelect.innerHTML = appState.allQuarters
+    .map((quarter) => {
+      const suffix = quarter.available ? "" : " (unavailable)";
+      return `<option value="${escapeHtml(quarter.period_end)}" ${quarter.available ? "" : "disabled"}>${escapeHtml(quarter.resource_name + suffix)}</option>`;
+    })
+    .join("");
+
+  const years = [...new Set(appState.availableQuarters.map(yearFromQuarter).filter(Boolean))]
+    .sort((a, b) => b - a);
+  elements.yearSelect.innerHTML = years
+    .map((year) => `<option value="${year}">${year}</option>`)
+    .join("");
+
+  const defaultQuarter = appState.availableQuarters.find((quarter) => quarter.period_end === quarterManifest.default_period_end) ?? appState.availableQuarters[0];
+  if (defaultQuarter) elements.quarterSelect.value = defaultQuarter.period_end;
+}
+
+function aggregateYearRows(year) {
+  const quarters = appState.availableQuarters.filter((quarter) => yearFromQuarter(quarter) === Number(year));
+  const bySuburb = new Map();
+
+  for (const quarter of quarters) {
+    for (const row of quarter.rows) {
+      if (!bySuburb.has(row.suburb)) bySuburb.set(row.suburb, []);
+      bySuburb.get(row.suburb).push(row);
+    }
+  }
+
+  return [...bySuburb.entries()]
+    .map(([suburb, rows]) => ({
+      suburb,
+      median_price: Math.round(rows.reduce((sum, row) => sum + row.median_price, 0) / rows.length),
+      annual_change_pct: Number((rows.reduce((sum, row) => sum + row.annual_change_pct, 0) / rows.length).toFixed(1))
+    }))
+    .sort((a, b) => a.suburb.localeCompare(b.suburb));
+}
+
+function selectedDataset() {
+  if (elements.datasetMode.value === "year") {
+    const year = Number(elements.yearSelect.value);
+    return {
+      rows: aggregateYearRows(year),
+      label: `${year} year summary`,
+      warning: `Averaging ${appState.availableQuarters.filter((quarter) => yearFromQuarter(quarter) === year).length} available quarter(s) for ${year}.`
+    };
+  }
+
+  const quarter = appState.availableQuarters.find((item) => item.period_end === elements.quarterSelect.value) ?? appState.availableQuarters[0];
+  const publishedLatest = appState.allQuarters[0];
+  const warning = publishedLatest && publishedLatest.period_end !== quarter?.period_end
+    ? `${publishedLatest.resource_name} is published by Data Vic but its XLS download is blocked for static fetching, so this view uses ${quarter.resource_name}.`
+    : "";
+  return {
+    rows: quarter?.rows ?? [],
+    label: quarter?.resource_name ?? "No available quarter",
+    warning
+  };
+}
+
+function updateDashboardDataset(centroidData) {
+  const dataset = selectedDataset();
+  const rows = sanitiseRows(dataset.rows);
+  appState.currentRows = rows;
+  appState.currentLabel = dataset.label;
+  appState.currentMode = elements.datasetMode.value;
+  elements.dataWarning.textContent = dataset.warning;
+  elements.quarterControl.hidden = appState.currentMode !== "quarter";
+  elements.yearControl.hidden = appState.currentMode !== "year";
+
+  renderSummary(rows);
+  renderPriceChart(rows);
+  renderChangeChart(rows, "growth");
+  renderDistribution(rows);
+  renderTable(filteredRows());
+  renderSelectedPeriodLabel();
+  if (mapState) updateMapData(rows, centroidData);
+}
+
+function renderSelectedPeriodLabel() {
+  elements.resourceName.textContent = appState.currentLabel;
+  if (appState.currentMode === "quarter") {
+    const quarter = appState.availableQuarters.find((item) => item.period_end === elements.quarterSelect.value);
+    elements.dataPeriod.textContent = quarter?.period_end
+      ? new Date(`${quarter.period_end}T00:00:00`).toLocaleDateString("en-AU", {
+          day: "numeric",
+          month: "short",
+          year: "numeric"
+        })
+      : "Unknown";
+  } else {
+    elements.dataPeriod.textContent = elements.yearSelect.value;
+  }
+}
+
 async function fetchJson(url) {
   const response = await fetch(url);
   if (!response.ok) throw new Error(`Could not load ${url.pathname}: HTTP ${response.status}`);
@@ -446,34 +717,79 @@ function sanitiseRows(rows) {
 }
 
 async function loadDashboard() {
-  const [rawRows, metadata, centroidData] = await Promise.all([
+  const [rawRows, metadata, centroidData, quarterManifest] = await Promise.all([
     fetchJson(dataUrl),
     fetchJson(metadataUrl),
-    fetchJson(centroidsUrl)
+    fetchJson(centroidsUrl),
+    fetchJson(quartersUrl)
   ]);
   const rows = sanitiseRows(rawRows);
-  const alphabeticRows = [...rows].sort((a, b) => a.suburb.localeCompare(b.suburb));
 
   renderMetadata(metadata);
-  renderSummary(rows);
-  renderPriceChart(rows);
-  renderChangeChart(rows, "growth");
-  renderDistribution(rows);
-  renderTable(alphabeticRows);
+  populateDataControls(quarterManifest);
+  appState.currentRows = rows;
   initialiseMap(rows, centroidData);
+  updateDashboardDataset(centroidData);
 
   elements.searchInput.addEventListener("input", () => {
-    const query = elements.searchInput.value.trim().toLowerCase();
-    const filtered = query ? rows.filter((row) => row.suburb.toLowerCase().includes(query)) : rows;
-    renderTable([...filtered].sort((a, b) => a.suburb.localeCompare(b.suburb)));
+    renderTable(filteredRows());
+  });
+
+  elements.sortButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const field = button.dataset.sort;
+      if (appState.sortField === field) {
+        appState.sortDirection = appState.sortDirection === "asc" ? "desc" : "asc";
+      } else {
+        appState.sortField = field;
+        appState.sortDirection = field === "suburb" ? "asc" : "desc";
+      }
+      renderTable(filteredRows());
+    });
+  });
+
+  elements.datasetMode.addEventListener("change", () => {
+    updateDashboardDataset(centroidData);
+  });
+
+  elements.quarterSelect.addEventListener("change", () => {
+    updateDashboardDataset(centroidData);
+  });
+
+  elements.yearSelect.addEventListener("change", () => {
+    updateDashboardDataset(centroidData);
   });
 
   elements.changeModeButtons.forEach((button) => {
-    button.addEventListener("click", () => renderChangeChart(rows, button.dataset.changeMode));
+    button.addEventListener("click", () => renderChangeChart(appState.currentRows, button.dataset.changeMode));
   });
 
   elements.mapModeButtons.forEach((button) => {
-    button.addEventListener("click", () => renderMapMarkers(button.dataset.mapMode));
+    button.addEventListener("click", () => {
+      appState.currentMapMode = button.dataset.mapMode;
+      renderMapMarkers(appState.currentMapMode);
+    });
+  });
+
+  elements.fullscreenMap.addEventListener("click", async () => {
+    const shell = elements.map.closest(".map-shell");
+    try {
+      if (!document.fullscreenElement && shell?.requestFullscreen) {
+        await shell.requestFullscreen();
+        elements.fullscreenMap.textContent = "Exit fullscreen";
+      } else if (document.fullscreenElement) {
+        await document.exitFullscreen();
+        elements.fullscreenMap.textContent = "Fullscreen";
+      }
+    } catch (error) {
+      console.warn("Fullscreen is not available in this browser context.", error);
+    }
+    setTimeout(() => mapState?.map.invalidateSize({ pan: false }), 120);
+  });
+
+  document.addEventListener("fullscreenchange", () => {
+    elements.fullscreenMap.textContent = document.fullscreenElement ? "Exit fullscreen" : "Fullscreen";
+    setTimeout(() => mapState?.map.invalidateSize({ pan: false }), 120);
   });
 }
 

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="Simplified map background for Victoria">
+  <rect width="1200" height="760" fill="#dcecf1"/>
+  <path d="M25 96 C158 68 303 76 430 104 C578 136 686 110 814 82 C954 52 1079 65 1187 114 L1187 610 C1080 641 958 664 820 650 C677 635 596 682 482 704 C343 731 213 711 72 672 L25 650 Z" fill="#f7f9f5"/>
+  <path d="M340 540 C410 494 471 474 530 490 C589 506 625 554 630 612 C579 642 522 654 464 642 C405 630 358 598 340 540Z" fill="#c5dfe6"/>
+  <path d="M533 488 C579 469 627 466 675 484 C711 498 735 526 745 560 C719 570 688 571 657 560 C615 545 582 518 533 488Z" fill="#c5dfe6"/>
+  <path d="M626 612 C662 635 698 665 717 706 C671 713 618 704 578 680 C595 657 611 634 626 612Z" fill="#c5dfe6"/>
+  <path d="M28 642 C98 606 146 562 191 501 C251 420 307 346 402 312 C505 274 595 291 670 333 C748 377 823 380 904 343 C1001 298 1096 286 1187 302" fill="none" stroke="#b6c7c7" stroke-width="3"/>
+  <path d="M152 124 C242 193 338 246 443 282 C542 315 631 369 708 444 C772 506 845 552 935 582" fill="none" stroke="#d9b98b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M426 130 C466 218 509 314 559 416 C596 491 644 562 711 654" fill="none" stroke="#d9b98b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M260 638 C337 599 420 562 510 526 C617 483 716 439 806 394 C906 345 994 302 1118 260" fill="none" stroke="#d9b98b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M466 490 C511 456 556 440 606 443 C658 446 704 470 742 510" fill="none" stroke="#80a8b8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M456 603 C493 560 536 538 589 539 C642 540 689 566 727 614 C696 649 645 668 592 660 C535 652 486 632 456 603Z" fill="#b8d9e2"/>
+  <path d="M542 526 C590 520 638 528 687 552 C735 576 774 607 812 642" fill="none" stroke="#d4a45f" stroke-width="8" stroke-linecap="round" opacity="0.95"/>
+  <path d="M501 676 C537 645 566 613 592 574 C622 529 650 493 696 456" fill="none" stroke="#d4a45f" stroke-width="7" stroke-linecap="round" opacity="0.95"/>
+  <path d="M414 536 C481 547 544 557 609 574 C673 591 732 617 788 652" fill="none" stroke="#b96f73" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  <path d="M575 438 C588 492 602 543 620 596 C635 641 657 682 686 722" fill="none" stroke="#b96f73" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  <path d="M454 625 C420 648 392 676 372 713" fill="none" stroke="#80a8b8" stroke-width="5" stroke-linecap="round"/>
+  <path d="M687 552 C722 526 770 516 821 526" fill="none" stroke="#80a8b8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M84 180 C155 170 230 167 306 173" fill="none" stroke="#b9d6c8" stroke-width="5" stroke-linecap="round"/>
+  <path d="M854 148 C943 130 1038 132 1148 156" fill="none" stroke="#b9d6c8" stroke-width="5" stroke-linecap="round"/>
+  <path d="M746 616 C833 634 914 635 1002 620" fill="none" stroke="#b9d6c8" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="595" cy="474" r="8" fill="#2e4658"/>
+  <text x="612" y="478" font-family="Inter, Arial, sans-serif" font-size="24" fill="#2e4658">Melbourne</text>
+  <text x="604" y="572" font-family="Inter, Arial, sans-serif" font-size="20" fill="#2e4658">Melbourne</text>
+  <text x="376" y="579" font-family="Inter, Arial, sans-serif" font-size="18" fill="#66818f">Port Phillip Bay</text>
+  <text x="466" y="628" font-family="Inter, Arial, sans-serif" font-size="18" fill="#66818f">Port Phillip Bay</text>
+  <text x="138" y="149" font-family="Inter, Arial, sans-serif" font-size="18" fill="#6d868d">Western Victoria</text>
+  <text x="908" y="170" font-family="Inter, Arial, sans-serif" font-size="18" fill="#6d868d">North East</text>
+  <text x="833" y="606" font-family="Inter, Arial, sans-serif" font-size="18" fill="#6d868d">Gippsland</text>
+  <text x="744" y="382" font-family="Inter, Arial, sans-serif" font-size="18" fill="#6d868d">Yarra Valley</text>
+</svg>

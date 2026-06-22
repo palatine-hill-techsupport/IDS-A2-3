@@ -3,6 +3,7 @@ import path from "node:path";
 
 const publicDir = path.resolve("public");
 const distDir = path.resolve("dist");
+const leafletDir = path.resolve("node_modules", "leaflet", "dist");
 
 async function exists(target) {
   try {
@@ -27,5 +28,11 @@ if (!(await exists(path.join(publicDir, "data", "suburb-centroids.json")))) {
 
 await fs.rm(distDir, { recursive: true, force: true });
 await fs.cp(publicDir, distDir, { recursive: true });
+
+if (await exists(leafletDir)) {
+  await fs.cp(leafletDir, path.join(distDir, "vendor", "leaflet"), { recursive: true });
+} else {
+  throw new Error("Leaflet assets are missing. Run npm install before npm run build.");
+}
 
 console.log(`Built static site in ${path.relative(process.cwd(), distDir)}.`);

@@ -34,12 +34,17 @@ body {
   overflow-x: hidden;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 a {
   color: var(--blue);
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 
@@ -309,8 +314,46 @@ main {
     var(--panel);
 }
 
+.data-controls {
+  display: grid;
+  grid-template-columns: minmax(150px, 180px) minmax(220px, 320px) minmax(150px, 180px) minmax(220px, 1fr);
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.data-controls label {
+  display: grid;
+  gap: 6px;
+}
+
+.data-controls span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.data-controls select {
+  min-height: 42px;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fbfdfd;
+  color: var(--ink);
+}
+
+.data-warning {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .map-heading {
   align-items: center;
+}
+
+.map-shell {
+  position: relative;
 }
 
 .suburb-map {
@@ -319,13 +362,7 @@ main {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background:
-    radial-gradient(circle at 58% 52%, rgba(143, 191, 209, 0.36) 0 10%, transparent 28%),
-    radial-gradient(circle at 46% 46%, rgba(52, 116, 95, 0.12) 0 12%, transparent 30%),
-    linear-gradient(rgba(46, 70, 88, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(46, 70, 88, 0.055) 1px, transparent 1px),
-    #eaf3f6;
-  background-size: auto, auto, 96px 96px, 96px 96px, auto;
+  background: #eaf3f6;
 }
 
 .map-feature .suburb-map {
@@ -333,8 +370,34 @@ main {
 }
 
 .leaflet-container {
-  background: transparent;
+  background: #eaf3f6;
   font: inherit;
+}
+
+.map-fullscreen-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 500;
+  min-height: 36px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--slate);
+  box-shadow: 0 8px 22px rgba(23, 35, 51, 0.12);
+  cursor: pointer;
+}
+
+.map-shell:fullscreen {
+  display: grid;
+  padding: 18px;
+  background: #eaf3f6;
+}
+
+.map-shell:fullscreen .suburb-map {
+  height: 100%;
+  min-height: calc(100vh - 36px);
 }
 
 .map-place-label {
@@ -460,6 +523,33 @@ th {
   font-size: 0.84rem;
 }
 
+th button {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  text-align: inherit;
+}
+
+th button::after {
+  content: "";
+  display: inline-block;
+  width: 0.8em;
+  color: var(--soft-muted);
+}
+
+th button.sort-asc::after {
+  content: "▲";
+}
+
+th button.sort-desc::after {
+  content: "▼";
+}
+
 td:nth-child(2),
 td:nth-child(3),
 th:nth-child(2),
@@ -520,6 +610,7 @@ footer {
   .stats-grid,
   .insight-grid,
   .visual-grid,
+  .data-controls,
   .bar-row {
     grid-template-columns: 1fr;
   }

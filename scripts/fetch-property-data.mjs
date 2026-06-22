@@ -7,6 +7,7 @@ const PACKAGE_ID = "victorian-property-sales-report-median-house-by-suburb";
 const API_URL = `https://discover.data.vic.gov.au/api/3/action/package_show?id=${PACKAGE_ID}`;
 const SOURCE_URL = `https://discover.data.vic.gov.au/dataset/${PACKAGE_ID}`;
 const OUT_DIR = path.resolve("public", "data");
+const QUARTERS_DIR = path.join(OUT_DIR, "quarters");
 
 const args = new Set(process.argv.slice(2));
 // CLASS_MODE is the assignment-safe default: row data is limited to exactly
@@ -69,7 +70,7 @@ function rowText(row) {
 
 function combinedHeader(rows, rowIndex, colIndex) {
   const parts = [];
-  for (const offset of [-1, 0, 1]) {
+  for (const offset of [-1, 0, 1, 2, 3]) {
     const value = rows[rowIndex + offset]?.[colIndex];
     if (value !== undefined && value !== null && String(value).trim() !== "") {
       parts.push(String(value).trim());
@@ -131,7 +132,14 @@ function findColumnMap(rows, headerRowIndex) {
   const medianPriceColumn = headerRow
     .map((_, index) => index)
     .filter((index) => index > suburbColumn && index < firstNonPriceColumn)
-    .at(-1);
+    .map((index) => ({
+      index,
+      numericCount: rows
+        .slice(headerRowIndex + 1, headerRowIndex + 80)
+        .filter((row) => parseNumber(row[index]) !== null).length
+    }))
+    .filter(({ numericCount }) => numericCount > 0)
+    .sort((a, b) => b.index - a.index || b.numericCount - a.numericCount)[0]?.index;
 
   if (medianPriceColumn === undefined) {
     throw new Error("Could not find a likely median price column.");
@@ -233,15 +241,67 @@ function cleanRowsFromSheet(rows, resource, sheetName) {
 }
 
 async function fetchJson(url) {
-  const response = await fetch(url, {
+  const response = await fetchWithTimeout(url, {
     headers: { "user-agent": "IDS201 static data pipeline/1.0" }
   });
   if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
   return response.json();
 }
 
+async function fetchWithTimeout(url, options = {}, timeoutMs = 15000) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, {
+      ...options,
+      signal: controller.signal
+    });
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 async function downloadWorkbook(resource) {
-  const response = await fetch(resource.url, {
+  const attempts = [resource.url, ...(await archivedWorkbookUrls(resource.url))];
+  const errors = [];
+
+  for (const url of attempts) {
+    try {
+      const workbook = await downloadWorkbookFromUrl(url);
+      return { workbook, resolvedUrl: url };
+    } catch (error) {
+      errors.push(`${url}: ${error.message}`);
+    }
+  }
+
+  throw new Error(errors.join(" | "));
+}
+
+async function archivedWorkbookUrls(url) {
+  try {
+    const cdxUrl = `https://web.archive.org/cdx?url=${encodeURIComponent(url)}&output=json&filter=statuscode:200&filter=mimetype:application/vnd.ms-excel&collapse=digest`;
+    const response = await fetchWithTimeout(cdxUrl, {
+      headers: { "user-agent": "IDS201 static data pipeline/1.0" }
+    });
+    if (!response.ok) return [];
+
+    const captures = await response.json();
+    const rows = captures.slice(1);
+    return rows
+      .map((row) => ({
+        timestamp: row[1],
+        original: row[2]
+      }))
+      .sort((a, b) => String(b.timestamp).localeCompare(String(a.timestamp)))
+      .slice(0, 2)
+      .map(({ timestamp, original }) => `https://web.archive.org/web/${timestamp}id_/${original}`);
+  } catch {
+    return [];
+  }
+}
+
+async function downloadWorkbookFromUrl(url) {
+  const response = await fetchWithTimeout(url, {
     headers: { "user-agent": "IDS201 static data pipeline/1.0" }
   });
   if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
@@ -256,7 +316,7 @@ async function downloadWorkbook(resource) {
 }
 
 async function parseResource(resource) {
-  const workbook = await downloadWorkbook(resource);
+  const { workbook, resolvedUrl } = await downloadWorkbook(resource);
   const sheetResults = workbook.SheetNames.map((sheetName) => {
     const sheet = workbook.Sheets[sheetName];
     const rows = XLSX.utils.sheet_to_json(sheet, {
@@ -276,7 +336,10 @@ async function parseResource(resource) {
     throw new Error("Workbook parsed, but no usable suburb rows survived cleaning.");
   }
 
-  return bestSheet;
+  return {
+    ...bestSheet,
+    resolvedUrl
+  };
 }
 
 function toCsv(rows) {
@@ -288,8 +351,9 @@ function toCsv(rows) {
   return [headers.join(","), ...rows.map((row) => headers.map((header) => escape(row[header])).join(","))].join("\n");
 }
 
-async function writeOutputs({ dataset, resources, selectedResource, parseResult, metadata, fullRows, failures = [] }) {
+async function writeOutputs({ dataset, resources, selectedResource, parseResult, metadata, fullRows, quarters, failures = [] }) {
   await fs.mkdir(OUT_DIR, { recursive: true });
+  await fs.mkdir(QUARTERS_DIR, { recursive: true });
 
   const classRows = dataset.map(({ suburb, median_price, annual_change_pct }) => ({
     suburb,
@@ -303,6 +367,7 @@ async function writeOutputs({ dataset, resources, selectedResource, parseResult,
     ckan_api_url: API_URL,
     resource_name: selectedResource.name,
     resource_url: selectedResource.url,
+    resolved_resource_url: parseResult.resolvedUrl,
     period_start: selectedResource.period_start ?? null,
     period_end: selectedResource.period_end ?? null,
     fetched_at: new Date().toISOString(),
@@ -314,12 +379,41 @@ async function writeOutputs({ dataset, resources, selectedResource, parseResult,
     parsed_sheet: parseResult.sheetName,
     parsed_row_count: parseResult.parsedRowCount,
     cleaned_row_count: dataset.length,
-    detected_columns: parseResult.columns
+    detected_columns: parseResult.columns,
+    published_latest_resource: resources[0]
+      ? {
+          resource_name: resources[0].name,
+          period_start: resources[0].period_start ?? null,
+          period_end: resources[0].period_end ?? null,
+          resource_url: resources[0].url
+        }
+      : null
   };
 
   await fs.writeFile(path.join(OUT_DIR, "property-median-house-suburb.class.json"), `${JSON.stringify(classRows, null, 2)}\n`);
   await fs.writeFile(path.join(OUT_DIR, "property-median-house-suburb.class.csv"), `${toCsv(classRows)}\n`);
   await fs.writeFile(path.join(OUT_DIR, "metadata.json"), `${JSON.stringify(metadataOut, null, 2)}\n`);
+
+  const quartersOut = {
+    source_title: metadata.title,
+    source_url: SOURCE_URL,
+    ckan_api_url: API_URL,
+    fetched_at: metadataOut.fetched_at,
+    published_latest_resource: metadataOut.published_latest_resource,
+    default_period_end: selectedResource.period_end ?? null,
+    quarters
+  };
+
+  await fs.writeFile(path.join(OUT_DIR, "property-median-house-suburb.quarters.json"), `${JSON.stringify(quartersOut, null, 2)}\n`);
+
+  for (const quarter of quarters.filter((quarter) => quarter.available)) {
+    const quarterRows = quarter.rows.map(({ suburb, median_price, annual_change_pct }) => ({
+      suburb,
+      median_price,
+      annual_change_pct
+    }));
+    await fs.writeFile(path.join(QUARTERS_DIR, `${quarter.period_end}.class.json`), `${JSON.stringify(quarterRows, null, 2)}\n`);
+  }
 
   if (!classMode || fullRows.length > 0) {
     await fs.writeFile(path.join(OUT_DIR, "property-median-house-suburb.full.json"), `${JSON.stringify(fullRows, null, 2)}\n`);
@@ -342,6 +436,7 @@ async function main() {
   const resourcesToParse = includeHistorical ? resources : resources.slice();
   const successful = [];
   const failures = [];
+  const quarterRecords = [];
 
   for (const resource of resourcesToParse) {
     try {
@@ -349,10 +444,34 @@ async function main() {
       const parseResult = await parseResource(resource);
       console.log(`Parsed ${parseResult.parsedRowCount} sheet rows; ${parseResult.rows.length} rows survived cleaning.`);
       successful.push({ resource, parseResult });
+      quarterRecords.push({
+        resource_name: resource.name,
+        resource_url: resource.url,
+        resolved_resource_url: parseResult.resolvedUrl,
+        period_start: resource.period_start ?? null,
+        period_end: resource.period_end ?? null,
+        available: true,
+        row_count: parseResult.rows.length,
+        rows: parseResult.rows.map(({ suburb, median_price, annual_change_pct }) => ({
+          suburb,
+          median_price,
+          annual_change_pct
+        }))
+      });
       if (!includeHistorical) break;
     } catch (error) {
       console.warn(`Could not use ${resource.name} (${resource.period_end}): ${error.message}`);
       failures.push({ resource_name: resource.name, period_end: resource.period_end, error: error.message });
+      quarterRecords.push({
+        resource_name: resource.name,
+        resource_url: resource.url,
+        period_start: resource.period_start ?? null,
+        period_end: resource.period_end ?? null,
+        available: false,
+        row_count: 0,
+        error: error.message,
+        rows: []
+      });
     }
   }
 
@@ -377,6 +496,7 @@ async function main() {
     selectedResource: selected.resource,
     parseResult: selected.parseResult,
     metadata,
+    quarters: quarterRecords,
     failures
   });
 }

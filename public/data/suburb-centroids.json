@@ -1,8 +1,8 @@
 {
   "source": "Matthew Proctor Australian Postcodes database",
   "source_url": "https://www.matthewproctor.com/australian_postcodes",
-  "generated_at": "2026-06-22T07:09:20.198Z",
-  "matched_suburb_count": 726,
+  "generated_at": "2026-06-22T08:08:18.185Z",
+  "matched_suburb_count": 732,
   "missing_suburb_count": 21,
   "missing_suburbs": [
     "Balcombe",
@@ -77,6 +77,11 @@
       "suburb": "Alfredton",
       "lat": -37.555,
       "lon": 143.8
+    },
+    {
+      "suburb": "Allansford",
+      "lat": -38.386111,
+      "lon": 142.593056
     },
     {
       "suburb": "Alphington",
@@ -184,11 +189,6 @@
       "lon": 144.864871
     },
     {
-      "suburb": "Axedale",
-      "lat": -36.776871,
-      "lon": 144.504007
-    },
-    {
       "suburb": "Bacchus Marsh",
       "lat": -37.676379,
       "lon": 144.446321
@@ -234,6 +234,11 @@
       "lon": 145.118
     },
     {
+      "suburb": "Balnarring Beach",
+      "lat": -38.388994,
+      "lon": 145.118272
+    },
+    {
       "suburb": "Balwyn",
       "lat": -37.808889,
       "lon": 145.078889
@@ -242,6 +247,11 @@
       "suburb": "Balwyn North",
       "lat": -37.794115,
       "lon": 145.087934
+    },
+    {
+      "suburb": "Bandiana",
+      "lat": -36.147903,
+      "lon": 146.926951
     },
     {
       "suburb": "Bannockburn",
@@ -304,6 +314,11 @@
       "lon": 145.3558
     },
     {
+      "suburb": "Belgrave Heights",
+      "lat": -37.923,
+      "lon": 145.34
+    },
+    {
       "suburb": "Bell Park",
       "lat": -38.11,
       "lon": 144.338
@@ -312,11 +327,6 @@
       "suburb": "Bell Post Hill",
       "lat": -38.1,
       "lon": 144.328
-    },
-    {
-      "suburb": "Bellbridge",
-      "lat": -36.098056,
-      "lon": 147.058889
     },
     {
       "suburb": "Bellfield (Banyule)",
@@ -419,11 +429,6 @@
       "lon": 144.66
     },
     {
-      "suburb": "Bonnie Doon",
-      "lat": -37.020704,
-      "lon": 145.86906
-    },
-    {
       "suburb": "Bonshaw",
       "lat": -37.603493,
       "lon": 143.815797
@@ -504,6 +509,11 @@
       "lon": 144.538242
     },
     {
+      "suburb": "Brooklyn",
+      "lat": -37.817349,
+      "lon": 144.846536
+    },
+    {
       "suburb": "Brown Hill",
       "lat": -37.5495,
       "lon": 143.9125
@@ -524,19 +534,9 @@
       "lon": 144.941912
     },
     {
-      "suburb": "Bruthen",
-      "lat": -37.713519,
-      "lon": 147.833902
-    },
-    {
       "suburb": "Bulleen",
       "lat": -37.766048,
       "lon": 145.087934
-    },
-    {
-      "suburb": "Bundalong",
-      "lat": -36.02935,
-      "lon": 146.130267
     },
     {
       "suburb": "Bundoora",
@@ -552,11 +552,6 @@
       "suburb": "Bunyip",
       "lat": -38.100051,
       "lon": 145.71894
-    },
-    {
-      "suburb": "Burnley",
-      "lat": -37.829673,
-      "lon": 145.012648
     },
     {
       "suburb": "Burnside",
@@ -624,14 +619,19 @@
       "lon": 145.6198
     },
     {
+      "suburb": "Cape Schanck",
+      "lat": -38.461,
+      "lon": 144.905
+    },
+    {
       "suburb": "Capel Sound",
       "lat": -38.3745,
       "lon": 144.879
     },
     {
-      "suburb": "Cardigan",
-      "lat": -37.538708,
-      "lon": 143.745729
+      "suburb": "Cardigan Village",
+      "lat": -37.517945,
+      "lon": 143.708448
     },
     {
       "suburb": "Carisbrook",
@@ -684,6 +684,11 @@
       "lon": 145.0266
     },
     {
+      "suburb": "Caulfield East",
+      "lat": -37.879196,
+      "lon": 145.04444
+    },
+    {
       "suburb": "Caulfield North",
       "lat": -37.871263,
       "lon": 145.019024
@@ -734,6 +739,11 @@
       "lon": 145.062993
     },
     {
+      "suburb": "Chewton",
+      "lat": -37.083333,
+      "lon": 144.266667
+    },
+    {
       "suburb": "Chiltern",
       "lat": -36.15,
       "lon": 146.6
@@ -742,6 +752,11 @@
       "suburb": "Chirnside Park",
       "lat": -37.737327,
       "lon": 145.30882
+    },
+    {
+      "suburb": "Chum Creek",
+      "lat": -37.606,
+      "lon": 145.488
     },
     {
       "suburb": "Churchill",
@@ -762,6 +777,11 @@
       "suburb": "Clayton South",
       "lat": -37.938811,
       "lon": 145.126706
+    },
+    {
+      "suburb": "Clematis",
+      "lat": -37.932206,
+      "lon": 145.422244
     },
     {
       "suburb": "Clifton Hill",
@@ -1084,9 +1104,9 @@
       "lon": 144.598529
     },
     {
-      "suburb": "Dunolly",
-      "lat": -36.85,
-      "lon": 143.733333
+      "suburb": "Dunkeld",
+      "lat": -37.65,
+      "lon": 142.35
     },
     {
       "suburb": "Eagle Point",
@@ -1244,6 +1264,11 @@
       "lon": 145.018127
     },
     {
+      "suburb": "Fairhaven",
+      "lat": -38.456111,
+      "lon": 144.085833
+    },
+    {
       "suburb": "Fawkner",
       "lat": -37.696927,
       "lon": 144.96669
@@ -1257,6 +1282,11 @@
       "suburb": "Ferny Creek",
       "lat": -37.875906,
       "lon": 145.330939
+    },
+    {
+      "suburb": "Fingal",
+      "lat": -38.421111,
+      "lon": 144.861111
     },
     {
       "suburb": "Fitzroy",
@@ -1329,6 +1359,11 @@
       "lon": 144.919805
     },
     {
+      "suburb": "Gardenvale",
+      "lat": -37.899,
+      "lon": 145.007
+    },
+    {
       "suburb": "Garfield",
       "lat": -38.099905,
       "lon": 145.680068
@@ -1374,14 +1409,19 @@
       "lon": 145.166821
     },
     {
-      "suburb": "Glengarry",
-      "lat": -38.135257,
-      "lon": 146.563749
+      "suburb": "Glenrowan",
+      "lat": -36.446884,
+      "lon": 146.232165
     },
     {
       "suburb": "Glenroy",
       "lat": -37.706246,
       "lon": 144.916137
+    },
+    {
+      "suburb": "Golden Beach",
+      "lat": -38.228095,
+      "lon": 147.375768
     },
     {
       "suburb": "Golden Point (Ballarat)",
@@ -1392,16 +1432,6 @@
       "suburb": "Golden Square",
       "lat": -36.766667,
       "lon": 144.25
-    },
-    {
-      "suburb": "Gordon",
-      "lat": -37.56783,
-      "lon": 144.117486
-    },
-    {
-      "suburb": "Goughs Bay",
-      "lat": -37.164643,
-      "lon": 146.068904
     },
     {
       "suburb": "Gowanbrae",
@@ -1434,11 +1464,6 @@
       "lon": 144.35
     },
     {
-      "suburb": "Gunbower",
-      "lat": -35.95539,
-      "lon": 144.357647
-    },
-    {
       "suburb": "Hadfield",
       "lat": -37.71,
       "lon": 144.95
@@ -1447,11 +1472,6 @@
       "suburb": "Hallam",
       "lat": -38.006951,
       "lon": 145.275651
-    },
-    {
-      "suburb": "Halls Gap",
-      "lat": -37.146798,
-      "lon": 142.523525
     },
     {
       "suburb": "Hamilton",
@@ -1542,6 +1562,11 @@
       "suburb": "Hepburn",
       "lat": -37.311823,
       "lon": 144.125661
+    },
+    {
+      "suburb": "Hepburn Springs",
+      "lat": -37.31475,
+      "lon": 144.147466
     },
     {
       "suburb": "Herne Hill",
@@ -1669,6 +1694,11 @@
       "lon": 144.3
     },
     {
+      "suburb": "Jeparit",
+      "lat": -36.134382,
+      "lon": 141.979185
+    },
+    {
       "suburb": "Junction Village",
       "lat": -38.132,
       "lon": 145.293
@@ -1757,11 +1787,6 @@
       "suburb": "Kew",
       "lat": -37.803516,
       "lon": 145.032802
-    },
-    {
-      "suburb": "Kew East",
-      "lat": -37.79228,
-      "lon": 145.05485
     },
     {
       "suburb": "Keysborough",
@@ -1934,9 +1959,9 @@
       "lon": 145.347533
     },
     {
-      "suburb": "Lindenow",
-      "lat": -37.799429,
-      "lon": 147.468383
+      "suburb": "Lismore",
+      "lat": -37.955294,
+      "lon": 143.349454
     },
     {
       "suburb": "Loch Sport",
@@ -1999,9 +2024,9 @@
       "lon": 145.301
     },
     {
-      "suburb": "Lysterfield South",
-      "lat": -37.949,
-      "lon": 145.26
+      "suburb": "Macarthur",
+      "lat": -38.027044,
+      "lon": 142.004643
     },
     {
       "suburb": "Macedon",
@@ -2144,19 +2169,9 @@
       "lon": 142.047503
     },
     {
-      "suburb": "Meredith",
-      "lat": -37.84598,
-      "lon": 144.076652
-    },
-    {
       "suburb": "Mernda",
       "lat": -37.58928,
       "lon": 145.103791
-    },
-    {
-      "suburb": "Merrigum",
-      "lat": -36.362401,
-      "lon": 145.170699
     },
     {
       "suburb": "Metung",
@@ -2339,11 +2354,6 @@
       "lon": 145.17622
     },
     {
-      "suburb": "Murchison",
-      "lat": -36.616667,
-      "lon": 145.216667
-    },
-    {
       "suburb": "Murrumbeena",
       "lat": -37.897831,
       "lon": 145.070895
@@ -2364,9 +2374,9 @@
       "lon": 145.152831
     },
     {
-      "suburb": "Nar Nar Goon",
-      "lat": -38.081944,
-      "lon": 145.575
+      "suburb": "Nar Nar Goon North",
+      "lat": -38.019,
+      "lon": 145.551
     },
     {
       "suburb": "Narre Warren",
@@ -2479,6 +2489,11 @@
       "lon": 144.941912
     },
     {
+      "suburb": "North Shore",
+      "lat": -38.099,
+      "lon": 144.373
+    },
+    {
       "suburb": "North Wonthaggi",
       "lat": -38.60895,
       "lon": 145.591103
@@ -2502,6 +2517,16 @@
       "suburb": "Nunawading",
       "lat": -37.818427,
       "lon": 145.176021
+    },
+    {
+      "suburb": "Nyah",
+      "lat": -35.15269,
+      "lon": 143.358222
+    },
+    {
+      "suburb": "Nyah West",
+      "lat": -35.183255,
+      "lon": 143.33664
     },
     {
       "suburb": "Oak Park",
@@ -2609,14 +2634,14 @@
       "lon": 145.231
     },
     {
-      "suburb": "Penshurst",
-      "lat": -37.883333,
-      "lon": 142.283333
+      "suburb": "Peterborough",
+      "lat": -38.594982,
+      "lon": 142.879384
     },
     {
-      "suburb": "Plenty",
-      "lat": -37.670486,
-      "lon": 145.109997
+      "suburb": "Pioneer Bay",
+      "lat": -38.380502,
+      "lon": 145.550368
     },
     {
       "suburb": "Point Cook",
@@ -2632,11 +2657,6 @@
       "suburb": "Porepunkah",
       "lat": -36.694433,
       "lon": 146.926414
-    },
-    {
-      "suburb": "Port Albert",
-      "lat": -38.665278,
-      "lon": 146.688333
     },
     {
       "suburb": "Port Fairy",
@@ -2677,11 +2697,6 @@
       "suburb": "Princes Hill",
       "lat": -37.784,
       "lon": 144.966
-    },
-    {
-      "suburb": "Pyramid Hill",
-      "lat": -36.055678,
-      "lon": 144.134178
     },
     {
       "suburb": "Quarry Hill",
@@ -2769,6 +2784,11 @@
       "lon": 144.356281
     },
     {
+      "suburb": "Ripponlea",
+      "lat": -37.878493,
+      "lon": 144.995608
+    },
+    {
       "suburb": "Robinvale",
       "lat": -34.588512,
       "lon": 142.777553
@@ -2814,9 +2834,9 @@
       "lon": 144.929
     },
     {
-      "suburb": "Rushworth",
-      "lat": -36.626523,
-      "lon": 145.067255
+      "suburb": "Rupanyup",
+      "lat": -36.630441,
+      "lon": 142.631031
     },
     {
       "suburb": "Rutherglen",
@@ -2859,11 +2879,6 @@
       "lon": 145.013514
     },
     {
-      "suburb": "Sandy Point",
-      "lat": -38.825602,
-      "lon": 146.134104
-    },
-    {
       "suburb": "Sassafras",
       "lat": -37.864593,
       "lon": 145.353065
@@ -2892,11 +2907,6 @@
       "suburb": "Seaholme",
       "lat": -37.868,
       "lon": 144.841
-    },
-    {
-      "suburb": "Seaspray",
-      "lat": -38.293635,
-      "lon": 147.146769
     },
     {
       "suburb": "Sebastopol",
@@ -2977,6 +2987,11 @@
       "suburb": "Sorrento",
       "lat": -38.347783,
       "lon": 144.746696
+    },
+    {
+      "suburb": "South Dudley",
+      "lat": -38.589996,
+      "lon": 145.577403
     },
     {
       "suburb": "South Geelong",
@@ -3169,6 +3184,11 @@
       "lon": 143.55248
     },
     {
+      "suburb": "Swan Reach",
+      "lat": -37.809725,
+      "lon": 147.859459
+    },
+    {
       "suburb": "Sydenham",
       "lat": -37.702,
       "lon": 144.767
@@ -3269,9 +3289,9 @@
       "lon": 144.957787
     },
     {
-      "suburb": "Toora",
-      "lat": -38.659779,
-      "lon": 146.304119
+      "suburb": "Toongabbie",
+      "lat": -38.032614,
+      "lon": 146.539226
     },
     {
       "suburb": "Tooradin",
@@ -3324,9 +3344,19 @@
       "lon": 144.880311
     },
     {
+      "suburb": "Tungamah",
+      "lat": -36.157535,
+      "lon": 145.869756
+    },
+    {
       "suburb": "Tyabb",
       "lat": -38.265108,
       "lon": 145.170699
+    },
+    {
+      "suburb": "Underbool",
+      "lat": -35.17074,
+      "lon": 141.808038
     },
     {
       "suburb": "Upper Ferntree Gully",
@@ -3362,11 +3392,6 @@
       "suburb": "Viewbank",
       "lat": -37.731,
       "lon": 145.1
-    },
-    {
-      "suburb": "Violet Town",
-      "lat": -36.637204,
-      "lon": 145.714107
     },
     {
       "suburb": "Wahgunyah",
@@ -3587,6 +3612,11 @@
       "suburb": "Woodend",
       "lat": -37.36132,
       "lon": 144.524424
+    },
+    {
+      "suburb": "Woodstock",
+      "lat": -37.53651,
+      "lon": 145.060363
     },
     {
       "suburb": "Woori Yallock",

@@ -2,63 +2,45 @@
   "source_title": "Victorian Property Sales Report - Median House by Suburb Quarterly",
   "source_url": "https://discover.data.vic.gov.au/dataset/victorian-property-sales-report-median-house-by-suburb",
   "ckan_api_url": "https://discover.data.vic.gov.au/api/3/action/package_show?id=victorian-property-sales-report-median-house-by-suburb",
-  "resource_name": "December 2023 Quarter",
-  "resource_url": "https://web.archive.org/web/20240718210312/https://www.land.vic.gov.au/__data/assets/excel_doc/0023/706334/median-house-q4-2023.xls",
-  "period_start": "2022-10-01",
-  "period_end": "2023-12-31",
-  "fetched_at": "2026-06-22T06:16:48.222Z",
+  "resource_name": "June 2025 Quarter",
+  "resource_url": "https://www.land.vic.gov.au/__data/assets/excel_doc/0023/762143/median-house-q2-2025.xls",
+  "resolved_resource_url": "https://web.archive.org/web/20251207162151id_/https://www.land.vic.gov.au/__data/assets/excel_doc/0023/762143/median-house-q2-2025.xls",
+  "period_start": "2024-04-01",
+  "period_end": "2025-06-30",
+  "fetched_at": "2026-06-22T08:03:27.485Z",
   "class_mode": true,
-  "include_historical": false,
+  "include_historical": true,
   "active_xls_resource_count": 9,
   "selected_resource_was_latest": false,
   "fallback_failures": [
     {
       "resource_name": "December 2025 Quarter",
       "period_end": "2025-12-31",
-      "error": "HTTP 403 Forbidden"
+      "error": "https://www.land.vic.gov.au/__data/assets/excel_doc/0030/773742/median-house-q4-2025.xls: HTTP 403 Forbidden"
     },
     {
       "resource_name": "September 2025 Quarter",
       "period_end": "2025-09-30",
-      "error": "HTTP 403 Forbidden"
-    },
-    {
-      "resource_name": "June 2025 Quarter",
-      "period_end": "2025-06-30",
-      "error": "HTTP 403 Forbidden"
-    },
-    {
-      "resource_name": "March 2025 Quarter",
-      "period_end": "2025-03-31",
-      "error": "HTTP 403 Forbidden"
+      "error": "https://www.land.vic.gov.au/__data/assets/excel_doc/0036/766719/median-house-q3-2025.xls: HTTP 403 Forbidden"
     },
     {
       "resource_name": "December 2024 Quarter",
       "period_end": "2024-12-31",
-      "error": "HTTP 403 Forbidden"
-    },
-    {
-      "resource_name": "September 2024 Quarter",
-      "period_end": "2024-09-30",
-      "error": "HTTP 403 Forbidden"
-    },
-    {
-      "resource_name": "June 2024 Quarter",
-      "period_end": "2024-06-30",
-      "error": "HTTP 403 Forbidden"
-    },
-    {
-      "resource_name": "March 2024 Quarter",
-      "period_end": "2024-03-31",
-      "error": "HTTP 403 Forbidden"
+      "error": "https://www.land.vic.gov.au/__data/assets/excel_doc/0023/752702/median-house-q4-2024.xls: HTTP 403 Forbidden"
     }
   ],
   "parsed_sheet": "Sheet1",
-  "parsed_row_count": 752,
-  "cleaned_row_count": 747,
+  "parsed_row_count": 758,
+  "cleaned_row_count": 753,
   "detected_columns": {
-    "suburb": "Median House Prices 4th Quarter 2023 SUBURB",
-    "median_price": "Oct - Dec 2023",
-    "annual_change_pct": "Change % Oct - Dec 2022 Oct - Dec 2023"
+    "suburb": "Locality",
+    "median_price": "Apr-Jun 2025",
+    "annual_change_pct": "Change (%) Apr-Jun 2024 to Apr-Jun 2025"
+  },
+  "published_latest_resource": {
+    "resource_name": "December 2025 Quarter",
+    "period_start": "2024-10-01",
+    "period_end": "2025-12-31",
+    "resource_url": "https://www.land.vic.gov.au/__data/assets/excel_doc/0030/773742/median-house-q4-2025.xls"
   }
 }

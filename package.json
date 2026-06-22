@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "data:fetch": "node scripts/fetch-property-data.mjs",
+    "data:fetch:quarters": "node scripts/fetch-property-data.mjs --historical",
     "data:fetch:full": "node scripts/fetch-property-data.mjs --full",
     "data:centroids": "node scripts/build-suburb-centroids.mjs",
     "build": "node scripts/build.mjs"
   },
   "dependencies": {
+    "leaflet": "^1.9.4",
     "xlsx": "^0.18.5"
-  },
-  "devDependencies": {}
+  }
 }

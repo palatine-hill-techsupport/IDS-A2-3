@@ -1,0 +1,3707 @@
+[
+  {
+    "suburb": "Abbotsford",
+    "median_price": 1190000,
+    "annual_change_pct": -15.7
+  },
+  {
+    "suburb": "Aberfeldie",
+    "median_price": 1805000,
+    "annual_change_pct": 17.6
+  },
+  {
+    "suburb": "Aintree",
+    "median_price": 750000,
+    "annual_change_pct": 2
+  },
+  {
+    "suburb": "Aireys Inlet",
+    "median_price": 1605000,
+    "annual_change_pct": 2.2
+  },
+  {
+    "suburb": "Airport West",
+    "median_price": 967500,
+    "annual_change_pct": 8.4
+  },
+  {
+    "suburb": "Albanvale",
+    "median_price": 625000,
+    "annual_change_pct": 5.9
+  },
+  {
+    "suburb": "Albert Park",
+    "median_price": 2197500,
+    "annual_change_pct": 4.7
+  },
+  {
+    "suburb": "Albion",
+    "median_price": 715000,
+    "annual_change_pct": 10.9
+  },
+  {
+    "suburb": "Alexandra",
+    "median_price": 495000,
+    "annual_change_pct": 7.7
+  },
+  {
+    "suburb": "Alfredton",
+    "median_price": 620000,
+    "annual_change_pct": -3.1
+  },
+  {
+    "suburb": "Alphington",
+    "median_price": 2200000,
+    "annual_change_pct": -0.5
+  },
+  {
+    "suburb": "Altona",
+    "median_price": 1031000,
+    "annual_change_pct": -11.7
+  },
+  {
+    "suburb": "Altona East",
+    "median_price": 1000000,
+    "annual_change_pct": 6.1
+  },
+  {
+    "suburb": "Altona Meadows",
+    "median_price": 692500,
+    "annual_change_pct": 9.9
+  },
+  {
+    "suburb": "Altona North",
+    "median_price": 912500,
+    "annual_change_pct": 3.3
+  },
+  {
+    "suburb": "Anglesea",
+    "median_price": 1825000,
+    "annual_change_pct": 5.2
+  },
+  {
+    "suburb": "Apollo Bay",
+    "median_price": 850000,
+    "annual_change_pct": -24.4
+  },
+  {
+    "suburb": "Ararat",
+    "median_price": 347500,
+    "annual_change_pct": 13
+  },
+  {
+    "suburb": "Ardeer",
+    "median_price": 700000,
+    "annual_change_pct": 8.7
+  },
+  {
+    "suburb": "Armadale",
+    "median_price": 2610000,
+    "annual_change_pct": 22.1
+  },
+  {
+    "suburb": "Armstrong Creek",
+    "median_price": 675000,
+    "annual_change_pct": 0
+  },
+  {
+    "suburb": "Ascot (Greater Bendigo)",
+    "median_price": 562800,
+    "annual_change_pct": -2.1
+  },
+  {
+    "suburb": "Ascot Vale",
+    "median_price": 1347500,
+    "annual_change_pct": -0.4
+  },
+  {
+    "suburb": "Ashburton",
+    "median_price": 1850000,
+    "annual_change_pct": 4.6
+  },
+  {
+    "suburb": "Ashwood",
+    "median_price": 1840000,
+    "annual_change_pct": 38.6
+  },
+  {
+    "suburb": "Aspendale",
+    "median_price": 1400000,
+    "annual_change_pct": 3.7
+  },
+  {
+    "suburb": "Aspendale Gardens",
+    "median_price": 1150000,
+    "annual_change_pct": 7.7
+  },
+  {
+    "suburb": "Attwood",
+    "median_price": 930000,
+    "annual_change_pct": -7
+  },
+  {
+    "suburb": "Avenel",
+    "median_price": 467500,
+    "annual_change_pct": -8.3
+  },
+  {
+    "suburb": "Avoca",
+    "median_price": 335000,
+    "annual_change_pct": 1.5
+  },
+  {
+    "suburb": "Avondale Heights",
+    "median_price": 905000,
+    "annual_change_pct": -2.9
+  },
+  {
+    "suburb": "Bacchus Marsh",
+    "median_price": 617500,
+    "annual_change_pct": -2.8
+  },
+  {
+    "suburb": "Badger Creek",
+    "median_price": 690000,
+    "annual_change_pct": 3.8
+  },
+  {
+    "suburb": "Bairnsdale",
+    "median_price": 380000,
+    "annual_change_pct": -15.2
+  },
+  {
+    "suburb": "Balaclava",
+    "median_price": 1596300,
+    "annual_change_pct": 3
+  },
+  {
+    "suburb": "Balcombe",
+    "median_price": 1925000,
+    "annual_change_pct": 0.8
+  },
+  {
+    "suburb": "Ballan",
+    "median_price": 665000,
+    "annual_change_pct": 3.7
+  },
+  {
+    "suburb": "Ballarat Central",
+    "median_price": 600000,
+    "annual_change_pct": -0.8
+  },
+  {
+    "suburb": "Ballarat East",
+    "median_price": 480000,
+    "annual_change_pct": -5
+  },
+  {
+    "suburb": "Ballarat North",
+    "median_price": 555000,
+    "annual_change_pct": -19.6
+  },
+  {
+    "suburb": "Balnarring",
+    "median_price": 1310000,
+    "annual_change_pct": 4.8
+  },
+  {
+    "suburb": "Balwyn",
+    "median_price": 3187400,
+    "annual_change_pct": 13.8
+  },
+  {
+    "suburb": "Balwyn North",
+    "median_price": 2570000,
+    "annual_change_pct": 11.3
+  },
+  {
+    "suburb": "Bannockburn",
+    "median_price": 710000,
+    "annual_change_pct": 0.7
+  },
+  {
+    "suburb": "Baranduda",
+    "median_price": 655000,
+    "annual_change_pct": 23.1
+  },
+  {
+    "suburb": "Barwon Heads",
+    "median_price": 1785000,
+    "annual_change_pct": -3.5
+  },
+  {
+    "suburb": "Baxter",
+    "median_price": 755000,
+    "annual_change_pct": -5.2
+  },
+  {
+    "suburb": "Bayswater",
+    "median_price": 800000,
+    "annual_change_pct": -8.3
+  },
+  {
+    "suburb": "Bayswater North",
+    "median_price": 840000,
+    "annual_change_pct": -3.4
+  },
+  {
+    "suburb": "Beaconsfield",
+    "median_price": 882000,
+    "annual_change_pct": -0.3
+  },
+  {
+    "suburb": "Beaconsfield Upper",
+    "median_price": 880000,
+    "annual_change_pct": -28.2
+  },
+  {
+    "suburb": "Beaufort",
+    "median_price": 400000,
+    "annual_change_pct": -14
+  },
+  {
+    "suburb": "Beaumaris",
+    "median_price": 1925000,
+    "annual_change_pct": -1.9
+  },
+  {
+    "suburb": "Beeac",
+    "median_price": 687500,
+    "annual_change_pct": 24.3
+  },
+  {
+    "suburb": "Beechworth",
+    "median_price": 780000,
+    "annual_change_pct": 8.6
+  },
+  {
+    "suburb": "Belgrave",
+    "median_price": 790000,
+    "annual_change_pct": 2.6
+  },
+  {
+    "suburb": "Bell Park",
+    "median_price": 632500,
+    "annual_change_pct": 7.7
+  },
+  {
+    "suburb": "Bell Post Hill",
+    "median_price": 685000,
+    "annual_change_pct": 15.6
+  },
+  {
+    "suburb": "Bellfield (Banyule)",
+    "median_price": 925500,
+    "annual_change_pct": -8.2
+  },
+  {
+    "suburb": "Belmont",
+    "median_price": 692500,
+    "annual_change_pct": 3.2
+  },
+  {
+    "suburb": "Benalla",
+    "median_price": 450000,
+    "annual_change_pct": 3.4
+  },
+  {
+    "suburb": "Bendigo",
+    "median_price": 530000,
+    "annual_change_pct": -1.9
+  },
+  {
+    "suburb": "Bentleigh",
+    "median_price": 1625000,
+    "annual_change_pct": -11.2
+  },
+  {
+    "suburb": "Bentleigh East",
+    "median_price": 1528400,
+    "annual_change_pct": 7.1
+  },
+  {
+    "suburb": "Berwick",
+    "median_price": 870000,
+    "annual_change_pct": 2.4
+  },
+  {
+    "suburb": "Beveridge",
+    "median_price": 685000,
+    "annual_change_pct": 3
+  },
+  {
+    "suburb": "Birchip",
+    "median_price": 160000,
+    "annual_change_pct": -36
+  },
+  {
+    "suburb": "Birregurra",
+    "median_price": 627500,
+    "annual_change_pct": -34.6
+  },
+  {
+    "suburb": "Bittern",
+    "median_price": 880000,
+    "annual_change_pct": -1.4
+  },
+  {
+    "suburb": "Black Hill",
+    "median_price": 510000,
+    "annual_change_pct": -31.1
+  },
+  {
+    "suburb": "Black Rock",
+    "median_price": 3000000,
+    "annual_change_pct": 29
+  },
+  {
+    "suburb": "Blackburn",
+    "median_price": 1805000,
+    "annual_change_pct": 17.6
+  },
+  {
+    "suburb": "Blackburn North",
+    "median_price": 1262500,
+    "annual_change_pct": -7.8
+  },
+  {
+    "suburb": "Blackburn South",
+    "median_price": 1375000,
+    "annual_change_pct": 3.1
+  },
+  {
+    "suburb": "Blairgowrie",
+    "median_price": 1625000,
+    "annual_change_pct": -11
+  },
+  {
+    "suburb": "Blind Bight",
+    "median_price": 850000,
+    "annual_change_pct": 11.5
+  },
+  {
+    "suburb": "Bonbeach",
+    "median_price": 970000,
+    "annual_change_pct": -5.5
+  },
+  {
+    "suburb": "Bonnie Brook",
+    "median_price": 690000,
+    "annual_change_pct": 3
+  },
+  {
+    "suburb": "Bonnie Doon",
+    "median_price": 740000,
+    "annual_change_pct": 3.9
+  },
+  {
+    "suburb": "Bonshaw",
+    "median_price": 545000,
+    "annual_change_pct": -5.5
+  },
+  {
+    "suburb": "Boort",
+    "median_price": 291300,
+    "annual_change_pct": 9.9
+  },
+  {
+    "suburb": "Boronia",
+    "median_price": 859300,
+    "annual_change_pct": 2.9
+  },
+  {
+    "suburb": "Botanic Ridge",
+    "median_price": 817500,
+    "annual_change_pct": -5.3
+  },
+  {
+    "suburb": "Box Hill",
+    "median_price": 1720000,
+    "annual_change_pct": 19
+  },
+  {
+    "suburb": "Box Hill North",
+    "median_price": 1459000,
+    "annual_change_pct": 14.8
+  },
+  {
+    "suburb": "Box Hill South",
+    "median_price": 1450000,
+    "annual_change_pct": 3.4
+  },
+  {
+    "suburb": "Braybrook",
+    "median_price": 728000,
+    "annual_change_pct": 3
+  },
+  {
+    "suburb": "Breakwater",
+    "median_price": 590000,
+    "annual_change_pct": 2.6
+  },
+  {
+    "suburb": "Briar Hill",
+    "median_price": 997000,
+    "annual_change_pct": 10.8
+  },
+  {
+    "suburb": "Bright",
+    "median_price": 1112500,
+    "annual_change_pct": 19.5
+  },
+  {
+    "suburb": "Brighton",
+    "median_price": 3377800,
+    "annual_change_pct": 2.4
+  },
+  {
+    "suburb": "Brighton East",
+    "median_price": 2500000,
+    "annual_change_pct": 2.7
+  },
+  {
+    "suburb": "Broadford",
+    "median_price": 516000,
+    "annual_change_pct": -0.8
+  },
+  {
+    "suburb": "Broadmeadows",
+    "median_price": 541000,
+    "annual_change_pct": 2.1
+  },
+  {
+    "suburb": "Brookfield",
+    "median_price": 570000,
+    "annual_change_pct": 0
+  },
+  {
+    "suburb": "Brown Hill",
+    "median_price": 650000,
+    "annual_change_pct": -8.1
+  },
+  {
+    "suburb": "Brunswick",
+    "median_price": 1330000,
+    "annual_change_pct": 0.6
+  },
+  {
+    "suburb": "Brunswick East",
+    "median_price": 1373500,
+    "annual_change_pct": 5.7
+  },
+  {
+    "suburb": "Brunswick West",
+    "median_price": 1300000,
+    "annual_change_pct": 6.1
+  },
+  {
+    "suburb": "Bruthen",
+    "median_price": 529000,
+    "annual_change_pct": 1.7
+  },
+  {
+    "suburb": "Bulleen",
+    "median_price": 1260000,
+    "annual_change_pct": -6
+  },
+  {
+    "suburb": "Bundalong",
+    "median_price": 830000,
+    "annual_change_pct": -22.8
+  },
+  {
+    "suburb": "Bundoora",
+    "median_price": 854000,
+    "annual_change_pct": 5.4
+  },
+  {
+    "suburb": "Buninyong",
+    "median_price": 675000,
+    "annual_change_pct": -17.2
+  },
+  {
+    "suburb": "Bunyip",
+    "median_price": 705000,
+    "annual_change_pct": -20.8
+  },
+  {
+    "suburb": "Burnley",
+    "median_price": 1110000,
+    "annual_change_pct": -36.5
+  },
+  {
+    "suburb": "Burnside",
+    "median_price": 701000,
+    "annual_change_pct": -6.8
+  },
+  {
+    "suburb": "Burnside Heights",
+    "median_price": 730000,
+    "annual_change_pct": -1.4
+  },
+  {
+    "suburb": "Burwood",
+    "median_price": 1419400,
+    "annual_change_pct": -0.8
+  },
+  {
+    "suburb": "Burwood East",
+    "median_price": 1276500,
+    "annual_change_pct": 1.8
+  },
+  {
+    "suburb": "Cairnlea",
+    "median_price": 1100000,
+    "annual_change_pct": 15
+  },
+  {
+    "suburb": "California Gully",
+    "median_price": 503000,
+    "annual_change_pct": 13.4
+  },
+  {
+    "suburb": "Camberwell",
+    "median_price": 2732500,
+    "annual_change_pct": -2.9
+  },
+  {
+    "suburb": "Campbellfield",
+    "median_price": 653500,
+    "annual_change_pct": 8.9
+  },
+  {
+    "suburb": "Campbells Creek",
+    "median_price": 640000,
+    "annual_change_pct": -11.6
+  },
+  {
+    "suburb": "Camperdown",
+    "median_price": 441500,
+    "annual_change_pct": 11.1
+  },
+  {
+    "suburb": "Canadian",
+    "median_price": 450000,
+    "annual_change_pct": -12.6
+  },
+  {
+    "suburb": "Canterbury",
+    "median_price": 2742500,
+    "annual_change_pct": -18.9
+  },
+  {
+    "suburb": "Cape Paterson",
+    "median_price": 860000,
+    "annual_change_pct": -3.9
+  },
+  {
+    "suburb": "Capel Sound",
+    "median_price": 722500,
+    "annual_change_pct": -6.7
+  },
+  {
+    "suburb": "Cardigan",
+    "median_price": 1190000,
+    "annual_change_pct": null
+  },
+  {
+    "suburb": "Carisbrook",
+    "median_price": 407500,
+    "annual_change_pct": 14
+  },
+  {
+    "suburb": "Carlton",
+    "median_price": 1482500,
+    "annual_change_pct": -8.5
+  },
+  {
+    "suburb": "Carlton North",
+    "median_price": 1475000,
+    "annual_change_pct": -11.1
+  },
+  {
+    "suburb": "Carnegie",
+    "median_price": 1750000,
+    "annual_change_pct": 13.5
+  },
+  {
+    "suburb": "Caroline Springs",
+    "median_price": 740000,
+    "annual_change_pct": 5.7
+  },
+  {
+    "suburb": "Carrum",
+    "median_price": 1123500,
+    "annual_change_pct": 17
+  },
+  {
+    "suburb": "Carrum Downs",
+    "median_price": 720000,
+    "annual_change_pct": 5.7
+  },
+  {
+    "suburb": "Casterton",
+    "median_price": 229000,
+    "annual_change_pct": -19.6
+  },
+  {
+    "suburb": "Castlemaine",
+    "median_price": 740000,
+    "annual_change_pct": -6.1
+  },
+  {
+    "suburb": "Caulfield",
+    "median_price": 2250000,
+    "annual_change_pct": null
+  },
+  {
+    "suburb": "Caulfield East",
+    "median_price": 1690000,
+    "annual_change_pct": 38.5
+  },
+  {
+    "suburb": "Caulfield North",
+    "median_price": 2510000,
+    "annual_change_pct": -3.5
+  },
+  {
+    "suburb": "Caulfield South",
+    "median_price": 1775000,
+    "annual_change_pct": -8.7
+  },
+  {
+    "suburb": "Chadstone",
+    "median_price": 1265000,
+    "annual_change_pct": -4.6
+  },
+  {
+    "suburb": "Charlemont",
+    "median_price": 597500,
+    "annual_change_pct": -5.9
+  },
+  {
+    "suburb": "Charlton",
+    "median_price": 299000,
+    "annual_change_pct": -6.6
+  },
+  {
+    "suburb": "Chelsea",
+    "median_price": 1340000,
+    "annual_change_pct": 20.2
+  },
+  {
+    "suburb": "Chelsea Heights",
+    "median_price": 940000,
+    "annual_change_pct": 4.4
+  },
+  {
+    "suburb": "Cheltenham",
+    "median_price": 1410000,
+    "annual_change_pct": 1.9
+  },
+  {
+    "suburb": "Cheltenham East",
+    "median_price": 1150000,
+    "annual_change_pct": -1.3
+  },
+  {
+    "suburb": "Cheltenham North",
+    "median_price": 1135000,
+    "annual_change_pct": 5.6
+  },
+  {
+    "suburb": "Chiltern",
+    "median_price": 415000,
+    "annual_change_pct": -11.5
+  },
+  {
+    "suburb": "Chirnside Park",
+    "median_price": 955000,
+    "annual_change_pct": 11.7
+  },
+  {
+    "suburb": "Churchill",
+    "median_price": 340000,
+    "annual_change_pct": -2.2
+  },
+  {
+    "suburb": "Clarinda",
+    "median_price": 975000,
+    "annual_change_pct": 5.9
+  },
+  {
+    "suburb": "Clayton",
+    "median_price": 1101000,
+    "annual_change_pct": -12.5
+  },
+  {
+    "suburb": "Clayton North",
+    "median_price": 1190000,
+    "annual_change_pct": 0.8
+  },
+  {
+    "suburb": "Clayton South",
+    "median_price": 973500,
+    "annual_change_pct": 1.9
+  },
+  {
+    "suburb": "Clifton Hill",
+    "median_price": 1525000,
+    "annual_change_pct": -1.9
+  },
+  {
+    "suburb": "Clifton Springs",
+    "median_price": 740000,
+    "annual_change_pct": 11.3
+  },
+  {
+    "suburb": "Clunes",
+    "median_price": 410000,
+    "annual_change_pct": -18.4
+  },
+  {
+    "suburb": "Clyde",
+    "median_price": 690000,
+    "annual_change_pct": 1.5
+  },
+  {
+    "suburb": "Clyde North",
+    "median_price": 730000,
+    "annual_change_pct": 1.4
+  },
+  {
+    "suburb": "Cobblebank",
+    "median_price": 605000,
+    "annual_change_pct": 0.8
+  },
+  {
+    "suburb": "Cobden",
+    "median_price": 350000,
+    "annual_change_pct": -7.5
+  },
+  {
+    "suburb": "Cobram",
+    "median_price": 390000,
+    "annual_change_pct": -14.3
+  },
+  {
+    "suburb": "Coburg",
+    "median_price": 1160000,
+    "annual_change_pct": 5.5
+  },
+  {
+    "suburb": "Coburg East",
+    "median_price": 950000,
+    "annual_change_pct": -20
+  },
+  {
+    "suburb": "Coburg North",
+    "median_price": 1063500,
+    "annual_change_pct": 18.2
+  },
+  {
+    "suburb": "Cockatoo",
+    "median_price": 813000,
+    "annual_change_pct": 5.9
+  },
+  {
+    "suburb": "Cohuna",
+    "median_price": 341000,
+    "annual_change_pct": 7.6
+  },
+  {
+    "suburb": "Colac",
+    "median_price": 450000,
+    "annual_change_pct": -8.2
+  },
+  {
+    "suburb": "Coldstream",
+    "median_price": 826500,
+    "annual_change_pct": 4
+  },
+  {
+    "suburb": "Coleraine",
+    "median_price": 245000,
+    "annual_change_pct": 16.7
+  },
+  {
+    "suburb": "Collingwood",
+    "median_price": 1101000,
+    "annual_change_pct": -2.2
+  },
+  {
+    "suburb": "Connewarre",
+    "median_price": 2035000,
+    "annual_change_pct": null
+  },
+  {
+    "suburb": "Coolaroo",
+    "median_price": 525000,
+    "annual_change_pct": 5
+  },
+  {
+    "suburb": "Coonans Hill",
+    "median_price": 1545000,
+    "annual_change_pct": 10.4
+  },
+  {
+    "suburb": "Corinella",
+    "median_price": 550000,
+    "annual_change_pct": -21.3
+  },
+  {
+    "suburb": "Corio",
+    "median_price": 480000,
+    "annual_change_pct": 1.1
+  },
+  {
+    "suburb": "Coronet Bay",
+    "median_price": 580000,
+    "annual_change_pct": 0
+  },
+  {
+    "suburb": "Corryong",
+    "median_price": 380000,
+    "annual_change_pct": -17.4
+  },
+  {
+    "suburb": "Cowes",
+    "median_price": 697500,
+    "annual_change_pct": -12.8
+  },
+  {
+    "suburb": "Cowes West",
+    "median_price": 767500,
+    "annual_change_pct": -2.2
+  },
+  {
+    "suburb": "Craigieburn",
+    "median_price": 660000,
+    "annual_change_pct": 2.3
+  },
+  {
+    "suburb": "Cranbourne",
+    "median_price": 650000,
+    "annual_change_pct": 1.6
+  },
+  {
+    "suburb": "Cranbourne East",
+    "median_price": 725000,
+    "annual_change_pct": 4.7
+  },
+  {
+    "suburb": "Cranbourne North",
+    "median_price": 742500,
+    "annual_change_pct": 3.9
+  },
+  {
+    "suburb": "Cranbourne South",
+    "median_price": 669500,
+    "annual_change_pct": -18.4
+  },
+  {
+    "suburb": "Cranbourne West",
+    "median_price": 677500,
+    "annual_change_pct": 4.2
+  },
+  {
+    "suburb": "Cremorne",
+    "median_price": 1640000,
+    "annual_change_pct": 44.8
+  },
+  {
+    "suburb": "Creswick",
+    "median_price": 484300,
+    "annual_change_pct": -19.8
+  },
+  {
+    "suburb": "Crib Point",
+    "median_price": 740000,
+    "annual_change_pct": -2.3
+  },
+  {
+    "suburb": "Croydon",
+    "median_price": 966000,
+    "annual_change_pct": 6.2
+  },
+  {
+    "suburb": "Croydon Hills",
+    "median_price": 1200000,
+    "annual_change_pct": 14.5
+  },
+  {
+    "suburb": "Croydon North",
+    "median_price": 1165000,
+    "annual_change_pct": 5.2
+  },
+  {
+    "suburb": "Croydon South",
+    "median_price": 950500,
+    "annual_change_pct": 6.8
+  },
+  {
+    "suburb": "Curlewis",
+    "median_price": 650000,
+    "annual_change_pct": -5.3
+  },
+  {
+    "suburb": "Dallas",
+    "median_price": 525000,
+    "annual_change_pct": 7.1
+  },
+  {
+    "suburb": "Dalyston",
+    "median_price": 525000,
+    "annual_change_pct": 16.8
+  },
+  {
+    "suburb": "Dandenong",
+    "median_price": 681200,
+    "annual_change_pct": -1.3
+  },
+  {
+    "suburb": "Dandenong North",
+    "median_price": 743500,
+    "annual_change_pct": 5
+  },
+  {
+    "suburb": "Darley",
+    "median_price": 622500,
+    "annual_change_pct": 7.4
+  },
+  {
+    "suburb": "Daylesford",
+    "median_price": 870000,
+    "annual_change_pct": -8.7
+  },
+  {
+    "suburb": "Deanside",
+    "median_price": 639000,
+    "annual_change_pct": 1.8
+  },
+  {
+    "suburb": "Deepdene",
+    "median_price": 2930000,
+    "annual_change_pct": -10.7
+  },
+  {
+    "suburb": "Deer Park",
+    "median_price": 641000,
+    "annual_change_pct": 3.6
+  },
+  {
+    "suburb": "Delacombe",
+    "median_price": 535000,
+    "annual_change_pct": 4.5
+  },
+  {
+    "suburb": "Delahey",
+    "median_price": 638500,
+    "annual_change_pct": -6.1
+  },
+  {
+    "suburb": "Dennington",
+    "median_price": 550000,
+    "annual_change_pct": -14
+  },
+  {
+    "suburb": "Derrimut",
+    "median_price": 826000,
+    "annual_change_pct": 11.6
+  },
+  {
+    "suburb": "Diamond Creek",
+    "median_price": 1080000,
+    "annual_change_pct": 13.7
+  },
+  {
+    "suburb": "Diggers Rest",
+    "median_price": 660000,
+    "annual_change_pct": -0.8
+  },
+  {
+    "suburb": "Dimboola",
+    "median_price": 430000,
+    "annual_change_pct": 138.9
+  },
+  {
+    "suburb": "Dingley Village",
+    "median_price": 1150000,
+    "annual_change_pct": 10.6
+  },
+  {
+    "suburb": "Donald",
+    "median_price": 230000,
+    "annual_change_pct": -9.8
+  },
+  {
+    "suburb": "Doncaster",
+    "median_price": 1559000,
+    "annual_change_pct": 8.3
+  },
+  {
+    "suburb": "Doncaster East",
+    "median_price": 1612500,
+    "annual_change_pct": 1.6
+  },
+  {
+    "suburb": "Donnybrook",
+    "median_price": 662500,
+    "annual_change_pct": 2.7
+  },
+  {
+    "suburb": "Donvale",
+    "median_price": 1295000,
+    "annual_change_pct": -6.8
+  },
+  {
+    "suburb": "Doreen",
+    "median_price": 750000,
+    "annual_change_pct": 4.8
+  },
+  {
+    "suburb": "Doveton",
+    "median_price": 592500,
+    "annual_change_pct": 8.6
+  },
+  {
+    "suburb": "Dromana",
+    "median_price": 950000,
+    "annual_change_pct": -8.7
+  },
+  {
+    "suburb": "Drouin",
+    "median_price": 630000,
+    "annual_change_pct": 0.8
+  },
+  {
+    "suburb": "Drysdale",
+    "median_price": 655000,
+    "annual_change_pct": -25.6
+  },
+  {
+    "suburb": "Dunolly",
+    "median_price": 315000,
+    "annual_change_pct": 14.5
+  },
+  {
+    "suburb": "Eagle Point",
+    "median_price": 675000,
+    "annual_change_pct": 27.4
+  },
+  {
+    "suburb": "Eaglehawk",
+    "median_price": 526800,
+    "annual_change_pct": -0.6
+  },
+  {
+    "suburb": "Eaglemont",
+    "median_price": 1960000,
+    "annual_change_pct": -28.7
+  },
+  {
+    "suburb": "East Bairnsdale",
+    "median_price": 406000,
+    "annual_change_pct": 35.3
+  },
+  {
+    "suburb": "East Bendigo",
+    "median_price": 615000,
+    "annual_change_pct": 5.1
+  },
+  {
+    "suburb": "East Geelong",
+    "median_price": 803500,
+    "annual_change_pct": -3.8
+  },
+  {
+    "suburb": "East Melbourne",
+    "median_price": 3405000,
+    "annual_change_pct": 29.1
+  },
+  {
+    "suburb": "East Warburton",
+    "median_price": 650000,
+    "annual_change_pct": -7.2
+  },
+  {
+    "suburb": "Eastwood",
+    "median_price": 595000,
+    "annual_change_pct": -5.4
+  },
+  {
+    "suburb": "Echuca",
+    "median_price": 572500,
+    "annual_change_pct": -3.8
+  },
+  {
+    "suburb": "Edenhope",
+    "median_price": 320000,
+    "annual_change_pct": -7.2
+  },
+  {
+    "suburb": "Edithvale",
+    "median_price": 1320000,
+    "annual_change_pct": 4.2
+  },
+  {
+    "suburb": "Eildon",
+    "median_price": 453800,
+    "annual_change_pct": 1.4
+  },
+  {
+    "suburb": "Elliminyt",
+    "median_price": 540000,
+    "annual_change_pct": -33.7
+  },
+  {
+    "suburb": "Elmore",
+    "median_price": 322500,
+    "annual_change_pct": 2.4
+  },
+  {
+    "suburb": "Elsternwick",
+    "median_price": 2057500,
+    "annual_change_pct": -16.9
+  },
+  {
+    "suburb": "Eltham",
+    "median_price": 1327000,
+    "annual_change_pct": 28.8
+  },
+  {
+    "suburb": "Eltham North",
+    "median_price": 1215000,
+    "annual_change_pct": 1.3
+  },
+  {
+    "suburb": "Elwood",
+    "median_price": 2400000,
+    "annual_change_pct": -5.9
+  },
+  {
+    "suburb": "Emerald",
+    "median_price": 902500,
+    "annual_change_pct": 2.3
+  },
+  {
+    "suburb": "Endeavour Hills",
+    "median_price": 805000,
+    "annual_change_pct": 4.5
+  },
+  {
+    "suburb": "Epping",
+    "median_price": 690500,
+    "annual_change_pct": 6.1
+  },
+  {
+    "suburb": "Epsom",
+    "median_price": 608300,
+    "annual_change_pct": 11.6
+  },
+  {
+    "suburb": "Essendon",
+    "median_price": 1710000,
+    "annual_change_pct": -12.3
+  },
+  {
+    "suburb": "Essendon North",
+    "median_price": 1325000,
+    "annual_change_pct": 15.2
+  },
+  {
+    "suburb": "Essendon West",
+    "median_price": 1438000,
+    "annual_change_pct": 42.4
+  },
+  {
+    "suburb": "Eumemmerring",
+    "median_price": 670000,
+    "annual_change_pct": -5.1
+  },
+  {
+    "suburb": "Eureka",
+    "median_price": 457500,
+    "annual_change_pct": -20.9
+  },
+  {
+    "suburb": "Euroa",
+    "median_price": 542000,
+    "annual_change_pct": 10.6
+  },
+  {
+    "suburb": "Eynesbury",
+    "median_price": 663000,
+    "annual_change_pct": -1.6
+  },
+  {
+    "suburb": "Fairfield",
+    "median_price": 1626000,
+    "annual_change_pct": -7.6
+  },
+  {
+    "suburb": "Fawkner",
+    "median_price": 780000,
+    "annual_change_pct": 1.6
+  },
+  {
+    "suburb": "Ferntree Gully",
+    "median_price": 912000,
+    "annual_change_pct": 1.3
+  },
+  {
+    "suburb": "Ferny Creek",
+    "median_price": 1157500,
+    "annual_change_pct": 21.8
+  },
+  {
+    "suburb": "Fitzroy",
+    "median_price": 1970000,
+    "annual_change_pct": 14.5
+  },
+  {
+    "suburb": "Fitzroy North",
+    "median_price": 1827500,
+    "annual_change_pct": 14.2
+  },
+  {
+    "suburb": "Flemington",
+    "median_price": 1115000,
+    "annual_change_pct": -7.1
+  },
+  {
+    "suburb": "Flinders",
+    "median_price": 2800000,
+    "annual_change_pct": 13.1
+  },
+  {
+    "suburb": "Flora Hill",
+    "median_price": 530500,
+    "annual_change_pct": 3
+  },
+  {
+    "suburb": "Footscray",
+    "median_price": 965000,
+    "annual_change_pct": 12.9
+  },
+  {
+    "suburb": "Forest Hill",
+    "median_price": 1090000,
+    "annual_change_pct": -0.9
+  },
+  {
+    "suburb": "Foster",
+    "median_price": 687500,
+    "annual_change_pct": 16.5
+  },
+  {
+    "suburb": "Frankston",
+    "median_price": 745000,
+    "annual_change_pct": 6.4
+  },
+  {
+    "suburb": "Frankston North",
+    "median_price": 590500,
+    "annual_change_pct": 5
+  },
+  {
+    "suburb": "Frankston South",
+    "median_price": 1075000,
+    "annual_change_pct": -10.4
+  },
+  {
+    "suburb": "Fraser Rise",
+    "median_price": 735000,
+    "annual_change_pct": 5
+  },
+  {
+    "suburb": "Fyansford",
+    "median_price": 975000,
+    "annual_change_pct": -19.4
+  },
+  {
+    "suburb": "Garden City",
+    "median_price": 1565000,
+    "annual_change_pct": null
+  },
+  {
+    "suburb": "Garfield",
+    "median_price": 540000,
+    "annual_change_pct": -39.3
+  },
+  {
+    "suburb": "Geelong",
+    "median_price": 935000,
+    "annual_change_pct": 0.5
+  },
+  {
+    "suburb": "Geelong West",
+    "median_price": 860000,
+    "annual_change_pct": -14.9
+  },
+  {
+    "suburb": "Gembrook",
+    "median_price": 900000,
+    "annual_change_pct": -5.3
+  },
+  {
+    "suburb": "Gisborne",
+    "median_price": 932000,
+    "annual_change_pct": -11.2
+  },
+  {
+    "suburb": "Gladstone Park",
+    "median_price": 702500,
+    "annual_change_pct": 2.6
+  },
+  {
+    "suburb": "Glen Huntly",
+    "median_price": 1492500,
+    "annual_change_pct": -1.4
+  },
+  {
+    "suburb": "Glen Iris",
+    "median_price": 2425000,
+    "annual_change_pct": 0.2
+  },
+  {
+    "suburb": "Glen Waverley",
+    "median_price": 1708500,
+    "annual_change_pct": 3
+  },
+  {
+    "suburb": "Glengarry",
+    "median_price": 790000,
+    "annual_change_pct": null
+  },
+  {
+    "suburb": "Glenroy",
+    "median_price": 829500,
+    "annual_change_pct": 7.7
+  },
+  {
+    "suburb": "Golden Beach",
+    "median_price": 395000,
+    "annual_change_pct": -1.3
+  },
+  {
+    "suburb": "Golden Point (Ballarat)",
+    "median_price": 444000,
+    "annual_change_pct": -22.8
+  },
+  {
+    "suburb": "Golden Square",
+    "median_price": 497800,
+    "annual_change_pct": 2.1
+  },
+  {
+    "suburb": "Gordon",
+    "median_price": 670000,
+    "annual_change_pct": -14
+  },
+  {
+    "suburb": "Goughs Bay",
+    "median_price": 550000,
+    "annual_change_pct": -1.8
+  },
+  {
+    "suburb": "Gowanbrae",
+    "median_price": 1015000,
+    "annual_change_pct": -23.1
+  },
+  {
+    "suburb": "Grantville",
+    "median_price": 600000,
+    "annual_change_pct": 9.1
+  },
+  {
+    "suburb": "Green Lake",
+    "median_price": 507500,
+    "annual_change_pct": 19.4
+  },
+  {
+    "suburb": "Greensborough",
+    "median_price": 1020000,
+    "annual_change_pct": 8.7
+  },
+  {
+    "suburb": "Greenvale",
+    "median_price": 873800,
+    "annual_change_pct": 2.8
+  },
+  {
+    "suburb": "Grovedale",
+    "median_price": 651000,
+    "annual_change_pct": 2.1
+  },
+  {
+    "suburb": "Gunbower",
+    "median_price": 310000,
+    "annual_change_pct": 121.4
+  },
+  {
+    "suburb": "Hadfield",
+    "median_price": 895000,
+    "annual_change_pct": 5.3
+  },
+  {
+    "suburb": "Hallam",
+    "median_price": 737500,
+    "annual_change_pct": 11.6
+  },
+  {
+    "suburb": "Halls Gap",
+    "median_price": 630000,
+    "annual_change_pct": 13.5
+  },
+  {
+    "suburb": "Hamilton",
+    "median_price": 365000,
+    "annual_change_pct": -7.6
+  },
+  {
+    "suburb": "Hamlyn Heights",
+    "median_price": 710000,
+    "annual_change_pct": -1.8
+  },
+  {
+    "suburb": "Hampton",
+    "median_price": 2541500,
+    "annual_change_pct": 1.7
+  },
+  {
+    "suburb": "Hampton East",
+    "median_price": 1383500,
+    "annual_change_pct": 13.9
+  },
+  {
+    "suburb": "Hampton Park",
+    "median_price": 680000,
+    "annual_change_pct": 4.6
+  },
+  {
+    "suburb": "Harcourt",
+    "median_price": 802500,
+    "annual_change_pct": 34
+  },
+  {
+    "suburb": "Harkness",
+    "median_price": 570000,
+    "annual_change_pct": -5
+  },
+  {
+    "suburb": "Hastings",
+    "median_price": 670000,
+    "annual_change_pct": -9.8
+  },
+  {
+    "suburb": "Hastings West",
+    "median_price": 610000,
+    "annual_change_pct": 0.8
+  },
+  {
+    "suburb": "Hawthorn",
+    "median_price": 2752500,
+    "annual_change_pct": -5.1
+  },
+  {
+    "suburb": "Hawthorn East",
+    "median_price": 2415000,
+    "annual_change_pct": -19.2
+  },
+  {
+    "suburb": "Healesville",
+    "median_price": 780000,
+    "annual_change_pct": 4
+  },
+  {
+    "suburb": "Heathcote",
+    "median_price": 440000,
+    "annual_change_pct": -17.4
+  },
+  {
+    "suburb": "Heatherton",
+    "median_price": 1100000,
+    "annual_change_pct": 2.8
+  },
+  {
+    "suburb": "Heathmont",
+    "median_price": 1060000,
+    "annual_change_pct": -6.6
+  },
+  {
+    "suburb": "Heidelberg",
+    "median_price": 1522500,
+    "annual_change_pct": 17.1
+  },
+  {
+    "suburb": "Heidelberg Heights",
+    "median_price": 1030000,
+    "annual_change_pct": 14.4
+  },
+  {
+    "suburb": "Heidelberg West",
+    "median_price": 792500,
+    "annual_change_pct": -0.3
+  },
+  {
+    "suburb": "Hepburn",
+    "median_price": 760000,
+    "annual_change_pct": -26.4
+  },
+  {
+    "suburb": "Herne Hill",
+    "median_price": 650000,
+    "annual_change_pct": -14.5
+  },
+  {
+    "suburb": "Heyfield",
+    "median_price": 300000,
+    "annual_change_pct": -17.1
+  },
+  {
+    "suburb": "Heywood",
+    "median_price": 440000,
+    "annual_change_pct": 36.4
+  },
+  {
+    "suburb": "Highett",
+    "median_price": 1712000,
+    "annual_change_pct": 15.1
+  },
+  {
+    "suburb": "Highton",
+    "median_price": 855000,
+    "annual_change_pct": 5.6
+  },
+  {
+    "suburb": "Hillside (Melton)",
+    "median_price": 757500,
+    "annual_change_pct": -0.2
+  },
+  {
+    "suburb": "Hopetoun",
+    "median_price": 205000,
+    "annual_change_pct": -6.8
+  },
+  {
+    "suburb": "Hoppers Crossing",
+    "median_price": 625000,
+    "annual_change_pct": 0
+  },
+  {
+    "suburb": "Horsham",
+    "median_price": 377000,
+    "annual_change_pct": -5.5
+  },
+  {
+    "suburb": "Hughesdale",
+    "median_price": 1650000,
+    "annual_change_pct": 14.2
+  },
+  {
+    "suburb": "Huntingdale",
+    "median_price": 1340000,
+    "annual_change_pct": -2
+  },
+  {
+    "suburb": "Huntly",
+    "median_price": 570000,
+    "annual_change_pct": 6.6
+  },
+  {
+    "suburb": "Hurstbridge",
+    "median_price": 1002600,
+    "annual_change_pct": 17
+  },
+  {
+    "suburb": "Indented Head",
+    "median_price": 881800,
+    "annual_change_pct": 2.2
+  },
+  {
+    "suburb": "Inglewood",
+    "median_price": 475000,
+    "annual_change_pct": null
+  },
+  {
+    "suburb": "Inverloch",
+    "median_price": 896000,
+    "annual_change_pct": -10.4
+  },
+  {
+    "suburb": "Invermay Park",
+    "median_price": 536500,
+    "annual_change_pct": -18.4
+  },
+  {
+    "suburb": "Ironbark",
+    "median_price": 520000,
+    "annual_change_pct": -1.9
+  },
+  {
+    "suburb": "Irymple",
+    "median_price": 525000,
+    "annual_change_pct": 5
+  },
+  {
+    "suburb": "Ivanhoe",
+    "median_price": 1865000,
+    "annual_change_pct": 6
+  },
+  {
+    "suburb": "Ivanhoe East",
+    "median_price": 2412500,
+    "annual_change_pct": -7.2
+  },
+  {
+    "suburb": "Jacana",
+    "median_price": 587800,
+    "annual_change_pct": -3.3
+  },
+  {
+    "suburb": "Jackass Flat",
+    "median_price": 572500,
+    "annual_change_pct": 12.5
+  },
+  {
+    "suburb": "Jan Juc",
+    "median_price": 1235000,
+    "annual_change_pct": -4.3
+  },
+  {
+    "suburb": "Jeeralang North",
+    "median_price": 392500,
+    "annual_change_pct": 10.6
+  },
+  {
+    "suburb": "Junction Village",
+    "median_price": 710000,
+    "annual_change_pct": 7.2
+  },
+  {
+    "suburb": "Junortoun",
+    "median_price": 690000,
+    "annual_change_pct": -22.2
+  },
+  {
+    "suburb": "Kalimna",
+    "median_price": 575000,
+    "annual_change_pct": 18.9
+  },
+  {
+    "suburb": "Kalkallo",
+    "median_price": 610000,
+    "annual_change_pct": -5.1
+  },
+  {
+    "suburb": "Kallista",
+    "median_price": 780000,
+    "annual_change_pct": null
+  },
+  {
+    "suburb": "Kalorama",
+    "median_price": 842500,
+    "annual_change_pct": -4.8
+  },
+  {
+    "suburb": "Kangaroo Flat",
+    "median_price": 540000,
+    "annual_change_pct": 9.1
+  },
+  {
+    "suburb": "Kangaroo Ground South",
+    "median_price": 1030500,
+    "annual_change_pct": 2
+  },
+  {
+    "suburb": "Kaniva",
+    "median_price": 132500,
+    "annual_change_pct": -24.9
+  },
+  {
+    "suburb": "Kealba",
+    "median_price": 715000,
+    "annual_change_pct": 7.1
+  },
+  {
+    "suburb": "Keilor",
+    "median_price": 1138000,
+    "annual_change_pct": 16.1
+  },
+  {
+    "suburb": "Keilor Downs",
+    "median_price": 702800,
+    "annual_change_pct": -8.7
+  },
+  {
+    "suburb": "Keilor East",
+    "median_price": 1055000,
+    "annual_change_pct": 9.3
+  },
+  {
+    "suburb": "Keilor Lodge",
+    "median_price": 1100000,
+    "annual_change_pct": 28.7
+  },
+  {
+    "suburb": "Keilor Park",
+    "median_price": 905000,
+    "annual_change_pct": 14.1
+  },
+  {
+    "suburb": "Kennington",
+    "median_price": 562500,
+    "annual_change_pct": -7.4
+  },
+  {
+    "suburb": "Kensington",
+    "median_price": 1102500,
+    "annual_change_pct": 13.5
+  },
+  {
+    "suburb": "Kerang",
+    "median_price": 282500,
+    "annual_change_pct": 20.2
+  },
+  {
+    "suburb": "Kew",
+    "median_price": 3015000,
+    "annual_change_pct": -7.2
+  },
+  {
+    "suburb": "Kew East",
+    "median_price": 2888000,
+    "annual_change_pct": 25.6
+  },
+  {
+    "suburb": "Kew North",
+    "median_price": 2217500,
+    "annual_change_pct": -10.6
+  },
+  {
+    "suburb": "Keysborough",
+    "median_price": 930000,
+    "annual_change_pct": -3.3
+  },
+  {
+    "suburb": "Kialla",
+    "median_price": 670000,
+    "annual_change_pct": -2.9
+  },
+  {
+    "suburb": "Killara (Wodonga)",
+    "median_price": 630000,
+    "annual_change_pct": -3
+  },
+  {
+    "suburb": "Kilmore",
+    "median_price": 599000,
+    "annual_change_pct": -1.8
+  },
+  {
+    "suburb": "Kilsyth",
+    "median_price": 795000,
+    "annual_change_pct": 1.3
+  },
+  {
+    "suburb": "Kilsyth South",
+    "median_price": 1072500,
+    "annual_change_pct": 24
+  },
+  {
+    "suburb": "Kinglake",
+    "median_price": 805000,
+    "annual_change_pct": 19.7
+  },
+  {
+    "suburb": "Kings Park",
+    "median_price": 630500,
+    "annual_change_pct": 5.1
+  },
+  {
+    "suburb": "Kingsbury",
+    "median_price": 758000,
+    "annual_change_pct": -2
+  },
+  {
+    "suburb": "Kingsville",
+    "median_price": 1077500,
+    "annual_change_pct": -1.1
+  },
+  {
+    "suburb": "Knoxfield",
+    "median_price": 1005500,
+    "annual_change_pct": 16.6
+  },
+  {
+    "suburb": "Koo Wee Rup",
+    "median_price": 670000,
+    "annual_change_pct": 3.9
+  },
+  {
+    "suburb": "Koondrook",
+    "median_price": 325000,
+    "annual_change_pct": 32.5
+  },
+  {
+    "suburb": "Koroit",
+    "median_price": 550000,
+    "annual_change_pct": 4.8
+  },
+  {
+    "suburb": "Korumburra",
+    "median_price": 535000,
+    "annual_change_pct": 11.9
+  },
+  {
+    "suburb": "Kurunjang",
+    "median_price": 505000,
+    "annual_change_pct": -3
+  },
+  {
+    "suburb": "Kyabram",
+    "median_price": 430000,
+    "annual_change_pct": -5.5
+  },
+  {
+    "suburb": "Kyneton",
+    "median_price": 717500,
+    "annual_change_pct": -13.3
+  },
+  {
+    "suburb": "Lake Boga",
+    "median_price": 837000,
+    "annual_change_pct": 198.9
+  },
+  {
+    "suburb": "Lake Gardens",
+    "median_price": 686500,
+    "annual_change_pct": -17.8
+  },
+  {
+    "suburb": "Lake Tyers Beach",
+    "median_price": 552500,
+    "annual_change_pct": -3.5
+  },
+  {
+    "suburb": "Lake Wendouree",
+    "median_price": 1450000,
+    "annual_change_pct": 22.4
+  },
+  {
+    "suburb": "Lakes Entrance",
+    "median_price": 625000,
+    "annual_change_pct": 15.7
+  },
+  {
+    "suburb": "Lalor",
+    "median_price": 700000,
+    "annual_change_pct": 6.7
+  },
+  {
+    "suburb": "Lancefield",
+    "median_price": 662500,
+    "annual_change_pct": -8.9
+  },
+  {
+    "suburb": "Lang Lang",
+    "median_price": 737500,
+    "annual_change_pct": 14.2
+  },
+  {
+    "suburb": "Langwarrin",
+    "median_price": 855000,
+    "annual_change_pct": 1.8
+  },
+  {
+    "suburb": "Lara",
+    "median_price": 690000,
+    "annual_change_pct": -13.7
+  },
+  {
+    "suburb": "Lara Lake",
+    "median_price": 685000,
+    "annual_change_pct": -5.8
+  },
+  {
+    "suburb": "Launching Place",
+    "median_price": 675000,
+    "annual_change_pct": 3.8
+  },
+  {
+    "suburb": "Laverton",
+    "median_price": 590000,
+    "annual_change_pct": 1.7
+  },
+  {
+    "suburb": "Laverton South",
+    "median_price": 775000,
+    "annual_change_pct": 6.2
+  },
+  {
+    "suburb": "Leneva",
+    "median_price": 649500,
+    "annual_change_pct": -11.6
+  },
+  {
+    "suburb": "Leongatha",
+    "median_price": 572500,
+    "annual_change_pct": -1.3
+  },
+  {
+    "suburb": "Leopold",
+    "median_price": 680000,
+    "annual_change_pct": -3.2
+  },
+  {
+    "suburb": "Lilydale",
+    "median_price": 965000,
+    "annual_change_pct": 4.9
+  },
+  {
+    "suburb": "Loch Sport",
+    "median_price": 380000,
+    "annual_change_pct": 4.8
+  },
+  {
+    "suburb": "Lockington",
+    "median_price": 430000,
+    "annual_change_pct": 11.7
+  },
+  {
+    "suburb": "Long Gully",
+    "median_price": 445000,
+    "annual_change_pct": 11.3
+  },
+  {
+    "suburb": "Longwarry",
+    "median_price": 590000,
+    "annual_change_pct": 2.6
+  },
+  {
+    "suburb": "Lorne",
+    "median_price": 2000000,
+    "annual_change_pct": 4.7
+  },
+  {
+    "suburb": "Lovely Banks",
+    "median_price": 727500,
+    "annual_change_pct": 11.9
+  },
+  {
+    "suburb": "Lower Plenty",
+    "median_price": 1200000,
+    "annual_change_pct": -14.3
+  },
+  {
+    "suburb": "Lucas",
+    "median_price": 627500,
+    "annual_change_pct": 1.6
+  },
+  {
+    "suburb": "Lucknow",
+    "median_price": 579500,
+    "annual_change_pct": 44.9
+  },
+  {
+    "suburb": "Lynbrook",
+    "median_price": 865500,
+    "annual_change_pct": 6.3
+  },
+  {
+    "suburb": "Lyndhurst",
+    "median_price": 862000,
+    "annual_change_pct": -4.3
+  },
+  {
+    "suburb": "Lysterfield",
+    "median_price": 1280000,
+    "annual_change_pct": 40.1
+  },
+  {
+    "suburb": "Lysterfield South",
+    "median_price": 1676300,
+    "annual_change_pct": 7.5
+  },
+  {
+    "suburb": "Macedon",
+    "median_price": 1000000,
+    "annual_change_pct": -9.5
+  },
+  {
+    "suburb": "Macleod",
+    "median_price": 1240000,
+    "annual_change_pct": 10.1
+  },
+  {
+    "suburb": "Maddingley",
+    "median_price": 621300,
+    "annual_change_pct": -3.7
+  },
+  {
+    "suburb": "Maffra",
+    "median_price": 455000,
+    "annual_change_pct": 13.5
+  },
+  {
+    "suburb": "Maiden Gully",
+    "median_price": 785000,
+    "annual_change_pct": 4.7
+  },
+  {
+    "suburb": "Maidstone",
+    "median_price": 875000,
+    "annual_change_pct": -6.9
+  },
+  {
+    "suburb": "Maldon",
+    "median_price": 757500,
+    "annual_change_pct": -5.5
+  },
+  {
+    "suburb": "Mallacoota",
+    "median_price": 767500,
+    "annual_change_pct": -31.5
+  },
+  {
+    "suburb": "Malmsbury",
+    "median_price": 661000,
+    "annual_change_pct": -18.4
+  },
+  {
+    "suburb": "Malvern",
+    "median_price": 2860000,
+    "annual_change_pct": -6.2
+  },
+  {
+    "suburb": "Malvern East",
+    "median_price": 2121000,
+    "annual_change_pct": 0.5
+  },
+  {
+    "suburb": "Mambourin",
+    "median_price": 620500,
+    "annual_change_pct": -2.3
+  },
+  {
+    "suburb": "Manifold Heights",
+    "median_price": 920000,
+    "annual_change_pct": 8.2
+  },
+  {
+    "suburb": "Manor Lakes",
+    "median_price": 630000,
+    "annual_change_pct": 3.1
+  },
+  {
+    "suburb": "Mansfield",
+    "median_price": 730000,
+    "annual_change_pct": -1.4
+  },
+  {
+    "suburb": "Maribyrnong",
+    "median_price": 1240000,
+    "annual_change_pct": 7.8
+  },
+  {
+    "suburb": "Marong",
+    "median_price": 675000,
+    "annual_change_pct": 6.3
+  },
+  {
+    "suburb": "Marshall",
+    "median_price": 630000,
+    "annual_change_pct": 1
+  },
+  {
+    "suburb": "Maryborough",
+    "median_price": 401500,
+    "annual_change_pct": -4.4
+  },
+  {
+    "suburb": "McCrae",
+    "median_price": 1470000,
+    "annual_change_pct": -3.9
+  },
+  {
+    "suburb": "McKenzie Hill",
+    "median_price": 850000,
+    "annual_change_pct": -8.6
+  },
+  {
+    "suburb": "McKinnon",
+    "median_price": 1965000,
+    "annual_change_pct": 10.8
+  },
+  {
+    "suburb": "Meadow Heights",
+    "median_price": 577500,
+    "annual_change_pct": 6.9
+  },
+  {
+    "suburb": "Melton",
+    "median_price": 465000,
+    "annual_change_pct": 1.1
+  },
+  {
+    "suburb": "Melton South",
+    "median_price": 465000,
+    "annual_change_pct": -4.1
+  },
+  {
+    "suburb": "Melton West",
+    "median_price": 510000,
+    "annual_change_pct": -5.6
+  },
+  {
+    "suburb": "Mentone",
+    "median_price": 1346300,
+    "annual_change_pct": -4.7
+  },
+  {
+    "suburb": "Merbein",
+    "median_price": 340000,
+    "annual_change_pct": 5.4
+  },
+  {
+    "suburb": "Meredith",
+    "median_price": 540000,
+    "annual_change_pct": null
+  },
+  {
+    "suburb": "Merinda Park",
+    "median_price": 640000,
+    "annual_change_pct": 4.5
+  },
+  {
+    "suburb": "Mernda",
+    "median_price": 692500,
+    "annual_change_pct": 6.5
+  },
+  {
+    "suburb": "Merrigum",
+    "median_price": 282500,
+    "annual_change_pct": null
+  },
+  {
+    "suburb": "Metung",
+    "median_price": 905000,
+    "annual_change_pct": 1.4
+  },
+  {
+    "suburb": "Mickleham",
+    "median_price": 690000,
+    "annual_change_pct": -1.4
+  },
+  {
+    "suburb": "Middle Park",
+    "median_price": 2431000,
+    "annual_change_pct": 25.3
+  },
+  {
+    "suburb": "Mildura",
+    "median_price": 465000,
+    "annual_change_pct": 8.1
+  },
+  {
+    "suburb": "Mill Park",
+    "median_price": 776500,
+    "annual_change_pct": 2.8
+  },
+  {
+    "suburb": "Millgrove",
+    "median_price": 592500,
+    "annual_change_pct": 6.3
+  },
+  {
+    "suburb": "Miners Rest",
+    "median_price": 595000,
+    "annual_change_pct": 1.3
+  },
+  {
+    "suburb": "Minyip",
+    "median_price": 185000,
+    "annual_change_pct": null
+  },
+  {
+    "suburb": "Mirboo North",
+    "median_price": 500000,
+    "annual_change_pct": -13
+  },
+  {
+    "suburb": "Mitcham",
+    "median_price": 1197000,
+    "annual_change_pct": 6.6
+  },
+  {
+    "suburb": "Moe",
+    "median_price": 358500,
+    "annual_change_pct": -1.8
+  },
+  {
+    "suburb": "Monbulk",
+    "median_price": 781500,
+    "annual_change_pct": -5.3
+  },
+  {
+    "suburb": "Mont Albert",
+    "median_price": 2716000,
+    "annual_change_pct": 4.5
+  },
+  {
+    "suburb": "Mont Albert North",
+    "median_price": 1531000,
+    "annual_change_pct": -11
+  },
+  {
+    "suburb": "Montmorency",
+    "median_price": 1205000,
+    "annual_change_pct": -2.7
+  },
+  {
+    "suburb": "Montrose",
+    "median_price": 862000,
+    "annual_change_pct": 1.9
+  },
+  {
+    "suburb": "Moonee Ponds",
+    "median_price": 1440000,
+    "annual_change_pct": -4.9
+  },
+  {
+    "suburb": "Moorabbin",
+    "median_price": 1319300,
+    "annual_change_pct": 1.5
+  },
+  {
+    "suburb": "Mooroolbark",
+    "median_price": 846000,
+    "annual_change_pct": 5
+  },
+  {
+    "suburb": "Mooroopna",
+    "median_price": 410000,
+    "annual_change_pct": 23
+  },
+  {
+    "suburb": "Mordialloc",
+    "median_price": 1350000,
+    "annual_change_pct": -7.5
+  },
+  {
+    "suburb": "Mornington",
+    "median_price": 1137500,
+    "annual_change_pct": 3.3
+  },
+  {
+    "suburb": "Mortlake",
+    "median_price": 405000,
+    "annual_change_pct": 11.7
+  },
+  {
+    "suburb": "Morwell",
+    "median_price": 322000,
+    "annual_change_pct": 1.4
+  },
+  {
+    "suburb": "Mount Beauty",
+    "median_price": 575000,
+    "annual_change_pct": 26.4
+  },
+  {
+    "suburb": "Mount Clear",
+    "median_price": 555000,
+    "annual_change_pct": 8.8
+  },
+  {
+    "suburb": "Mount Cottrell",
+    "median_price": 685000,
+    "annual_change_pct": 19.8
+  },
+  {
+    "suburb": "Mount Dandenong",
+    "median_price": 865000,
+    "annual_change_pct": 15.9
+  },
+  {
+    "suburb": "Mount Duneed",
+    "median_price": 705000,
+    "annual_change_pct": -5.5
+  },
+  {
+    "suburb": "Mount Eliza",
+    "median_price": 1463500,
+    "annual_change_pct": -18
+  },
+  {
+    "suburb": "Mount Evelyn",
+    "median_price": 840000,
+    "annual_change_pct": 4
+  },
+  {
+    "suburb": "Mount Helen",
+    "median_price": 760000,
+    "annual_change_pct": 31
+  },
+  {
+    "suburb": "Mount Martha",
+    "median_price": 1987500,
+    "annual_change_pct": 7.4
+  },
+  {
+    "suburb": "Mount Pleasant",
+    "median_price": 465000,
+    "annual_change_pct": -8.4
+  },
+  {
+    "suburb": "Mount Waverley",
+    "median_price": 1678000,
+    "annual_change_pct": 0.3
+  },
+  {
+    "suburb": "Mulgrave",
+    "median_price": 978000,
+    "annual_change_pct": 4.8
+  },
+  {
+    "suburb": "Murchison",
+    "median_price": 515000,
+    "annual_change_pct": 25.6
+  },
+  {
+    "suburb": "Murrumbeena",
+    "median_price": 1630000,
+    "annual_change_pct": 8.7
+  },
+  {
+    "suburb": "Murtoa",
+    "median_price": 262000,
+    "annual_change_pct": 2.7
+  },
+  {
+    "suburb": "Myrtleford",
+    "median_price": 595000,
+    "annual_change_pct": 0
+  },
+  {
+    "suburb": "Nagambie",
+    "median_price": 600500,
+    "annual_change_pct": -17.2
+  },
+  {
+    "suburb": "Narre Warren",
+    "median_price": 740000,
+    "annual_change_pct": 4.4
+  },
+  {
+    "suburb": "Narre Warren North",
+    "median_price": 1442500,
+    "annual_change_pct": -0.7
+  },
+  {
+    "suburb": "Narre Warren South",
+    "median_price": 800000,
+    "annual_change_pct": -1.2
+  },
+  {
+    "suburb": "Nathalia",
+    "median_price": 382500,
+    "annual_change_pct": -0.6
+  },
+  {
+    "suburb": "Neerim South",
+    "median_price": 585000,
+    "annual_change_pct": -27.6
+  },
+  {
+    "suburb": "Nerrina",
+    "median_price": 770000,
+    "annual_change_pct": 14.9
+  },
+  {
+    "suburb": "New Gisborne",
+    "median_price": 950000,
+    "annual_change_pct": 6.1
+  },
+  {
+    "suburb": "Newborough",
+    "median_price": 410000,
+    "annual_change_pct": 3.8
+  },
+  {
+    "suburb": "Newcomb",
+    "median_price": 599000,
+    "annual_change_pct": 10.1
+  },
+  {
+    "suburb": "Newington",
+    "median_price": 600000,
+    "annual_change_pct": -36.8
+  },
+  {
+    "suburb": "Newlands Arm",
+    "median_price": 937500,
+    "annual_change_pct": 48.2
+  },
+  {
+    "suburb": "Newport",
+    "median_price": 1250000,
+    "annual_change_pct": -6.5
+  },
+  {
+    "suburb": "Newtown (Greater Geelong)",
+    "median_price": 1295000,
+    "annual_change_pct": -2.6
+  },
+  {
+    "suburb": "Nhill",
+    "median_price": 279000,
+    "annual_change_pct": 18.7
+  },
+  {
+    "suburb": "Nichols Point",
+    "median_price": 880000,
+    "annual_change_pct": 37.5
+  },
+  {
+    "suburb": "Niddrie",
+    "median_price": 1280000,
+    "annual_change_pct": 11.4
+  },
+  {
+    "suburb": "Noble Park",
+    "median_price": 782500,
+    "annual_change_pct": 10.2
+  },
+  {
+    "suburb": "Noble Park North",
+    "median_price": 765000,
+    "annual_change_pct": 3.3
+  },
+  {
+    "suburb": "Norlane",
+    "median_price": 478000,
+    "annual_change_pct": 3.9
+  },
+  {
+    "suburb": "North Bendigo",
+    "median_price": 479500,
+    "annual_change_pct": -6.9
+  },
+  {
+    "suburb": "North Geelong",
+    "median_price": 620000,
+    "annual_change_pct": -5.2
+  },
+  {
+    "suburb": "North Melbourne",
+    "median_price": 1143900,
+    "annual_change_pct": -12
+  },
+  {
+    "suburb": "North Wonthaggi",
+    "median_price": 578200,
+    "annual_change_pct": -11.5
+  },
+  {
+    "suburb": "Northcote",
+    "median_price": 1670000,
+    "annual_change_pct": 1.2
+  },
+  {
+    "suburb": "Notting Hill",
+    "median_price": 1121000,
+    "annual_change_pct": -6.6
+  },
+  {
+    "suburb": "Numurkah",
+    "median_price": 350000,
+    "annual_change_pct": -12.5
+  },
+  {
+    "suburb": "Nunawading",
+    "median_price": 1210200,
+    "annual_change_pct": 10
+  },
+  {
+    "suburb": "Oak Park",
+    "median_price": 1395000,
+    "annual_change_pct": 50.2
+  },
+  {
+    "suburb": "Oakleigh",
+    "median_price": 1360000,
+    "annual_change_pct": 7.5
+  },
+  {
+    "suburb": "Oakleigh East",
+    "median_price": 1255000,
+    "annual_change_pct": 32.1
+  },
+  {
+    "suburb": "Oakleigh South",
+    "median_price": 1257500,
+    "annual_change_pct": 23.3
+  },
+  {
+    "suburb": "Ocean Grove",
+    "median_price": 958000,
+    "annual_change_pct": -18.5
+  },
+  {
+    "suburb": "Officer",
+    "median_price": 715000,
+    "annual_change_pct": 1.4
+  },
+  {
+    "suburb": "Officer South",
+    "median_price": 780000,
+    "annual_change_pct": -8.2
+  },
+  {
+    "suburb": "Olinda",
+    "median_price": 975000,
+    "annual_change_pct": 16.2
+  },
+  {
+    "suburb": "Orbost",
+    "median_price": 357000,
+    "annual_change_pct": 2.7
+  },
+  {
+    "suburb": "Ormond",
+    "median_price": 1861000,
+    "annual_change_pct": 14.8
+  },
+  {
+    "suburb": "Osborne",
+    "median_price": 1090000,
+    "annual_change_pct": 4.8
+  },
+  {
+    "suburb": "Ouyen",
+    "median_price": 195000,
+    "annual_change_pct": -11.4
+  },
+  {
+    "suburb": "Pakenham",
+    "median_price": 665000,
+    "annual_change_pct": 3.9
+  },
+  {
+    "suburb": "Paradise Beach",
+    "median_price": 245000,
+    "annual_change_pct": -23.4
+  },
+  {
+    "suburb": "Park Orchards",
+    "median_price": 1910000,
+    "annual_change_pct": 11.4
+  },
+  {
+    "suburb": "Parkdale",
+    "median_price": 1480000,
+    "annual_change_pct": 13.1
+  },
+  {
+    "suburb": "Parkville",
+    "median_price": 1575000,
+    "annual_change_pct": -24.9
+  },
+  {
+    "suburb": "Pascoe Vale",
+    "median_price": 1040000,
+    "annual_change_pct": 11.2
+  },
+  {
+    "suburb": "Pascoe Vale South",
+    "median_price": 1265000,
+    "annual_change_pct": 10
+  },
+  {
+    "suburb": "Patterson Gardens",
+    "median_price": 1450000,
+    "annual_change_pct": 10.5
+  },
+  {
+    "suburb": "Patterson Lakes",
+    "median_price": 1407000,
+    "annual_change_pct": -14.7
+  },
+  {
+    "suburb": "Paynesville",
+    "median_price": 465000,
+    "annual_change_pct": -13.5
+  },
+  {
+    "suburb": "Pearcedale",
+    "median_price": 895000,
+    "annual_change_pct": 19.7
+  },
+  {
+    "suburb": "Penshurst",
+    "median_price": 265000,
+    "annual_change_pct": 2.9
+  },
+  {
+    "suburb": "Plenty",
+    "median_price": 1525000,
+    "annual_change_pct": -5.9
+  },
+  {
+    "suburb": "Point Cook",
+    "median_price": 810000,
+    "annual_change_pct": 7.3
+  },
+  {
+    "suburb": "Point Lonsdale",
+    "median_price": 1200000,
+    "annual_change_pct": -35
+  },
+  {
+    "suburb": "Porepunkah",
+    "median_price": 740000,
+    "annual_change_pct": -21.3
+  },
+  {
+    "suburb": "Port Albert",
+    "median_price": 512500,
+    "annual_change_pct": -16
+  },
+  {
+    "suburb": "Port Fairy",
+    "median_price": 1225000,
+    "annual_change_pct": -5.8
+  },
+  {
+    "suburb": "Port Melbourne",
+    "median_price": 1580000,
+    "annual_change_pct": -9.5
+  },
+  {
+    "suburb": "Portarlington",
+    "median_price": 1020000,
+    "annual_change_pct": 7.9
+  },
+  {
+    "suburb": "Portland",
+    "median_price": 400000,
+    "annual_change_pct": -8.6
+  },
+  {
+    "suburb": "Portsea",
+    "median_price": 3190000,
+    "annual_change_pct": -5.6
+  },
+  {
+    "suburb": "Prahran",
+    "median_price": 1680000,
+    "annual_change_pct": 5.7
+  },
+  {
+    "suburb": "Preston",
+    "median_price": 1156000,
+    "annual_change_pct": 2.1
+  },
+  {
+    "suburb": "Princes Hill",
+    "median_price": 2850000,
+    "annual_change_pct": 99.3
+  },
+  {
+    "suburb": "Pyramid Hill",
+    "median_price": 212500,
+    "annual_change_pct": -11.5
+  },
+  {
+    "suburb": "Quarry Hill",
+    "median_price": 757500,
+    "annual_change_pct": 39
+  },
+  {
+    "suburb": "Queenscliff",
+    "median_price": 1287500,
+    "annual_change_pct": -34.6
+  },
+  {
+    "suburb": "Rainbow",
+    "median_price": 235000,
+    "annual_change_pct": 54.1
+  },
+  {
+    "suburb": "Raymond Island",
+    "median_price": 505000,
+    "annual_change_pct": -19.3
+  },
+  {
+    "suburb": "Red Cliffs",
+    "median_price": 400000,
+    "annual_change_pct": 19.8
+  },
+  {
+    "suburb": "Red Hill",
+    "median_price": 1705000,
+    "annual_change_pct": null
+  },
+  {
+    "suburb": "Redan",
+    "median_price": 432000,
+    "annual_change_pct": -6.1
+  },
+  {
+    "suburb": "Research",
+    "median_price": 1107000,
+    "annual_change_pct": -12.5
+  },
+  {
+    "suburb": "Reservoir",
+    "median_price": 905000,
+    "annual_change_pct": 7.7
+  },
+  {
+    "suburb": "Rhyll",
+    "median_price": 980000,
+    "annual_change_pct": 32.9
+  },
+  {
+    "suburb": "Richmond",
+    "median_price": 1462500,
+    "annual_change_pct": 3
+  },
+  {
+    "suburb": "Riddells Creek",
+    "median_price": 955000,
+    "annual_change_pct": 32.6
+  },
+  {
+    "suburb": "Ringwood",
+    "median_price": 1094000,
+    "annual_change_pct": 4.2
+  },
+  {
+    "suburb": "Ringwood East",
+    "median_price": 1215000,
+    "annual_change_pct": 21.5
+  },
+  {
+    "suburb": "Ringwood North",
+    "median_price": 1302500,
+    "annual_change_pct": 24.9
+  },
+  {
+    "suburb": "Rippleside",
+    "median_price": 1205000,
+    "annual_change_pct": 24.2
+  },
+  {
+    "suburb": "Robinvale",
+    "median_price": 400000,
+    "annual_change_pct": 21.2
+  },
+  {
+    "suburb": "Rochester",
+    "median_price": 490000,
+    "annual_change_pct": 96
+  },
+  {
+    "suburb": "Rockbank",
+    "median_price": 631500,
+    "annual_change_pct": 4.4
+  },
+  {
+    "suburb": "Romsey",
+    "median_price": 750000,
+    "annual_change_pct": -0.3
+  },
+  {
+    "suburb": "Rosanna",
+    "median_price": 1316000,
+    "annual_change_pct": 3.6
+  },
+  {
+    "suburb": "Rosebud",
+    "median_price": 685500,
+    "annual_change_pct": -11
+  },
+  {
+    "suburb": "Rosebud South",
+    "median_price": 945000,
+    "annual_change_pct": -18.4
+  },
+  {
+    "suburb": "Rosedale",
+    "median_price": 585000,
+    "annual_change_pct": 56
+  },
+  {
+    "suburb": "Rowville",
+    "median_price": 1130000,
+    "annual_change_pct": 10.2
+  },
+  {
+    "suburb": "Roxburgh Park",
+    "median_price": 682500,
+    "annual_change_pct": 2.2
+  },
+  {
+    "suburb": "Rushworth",
+    "median_price": 405000,
+    "annual_change_pct": 32.8
+  },
+  {
+    "suburb": "Rutherglen",
+    "median_price": 482000,
+    "annual_change_pct": -18
+  },
+  {
+    "suburb": "Rye",
+    "median_price": 1132200,
+    "annual_change_pct": 2.9
+  },
+  {
+    "suburb": "Safety Beach",
+    "median_price": 1121500,
+    "annual_change_pct": -13.7
+  },
+  {
+    "suburb": "Sailors Gully",
+    "median_price": 700000,
+    "annual_change_pct": 54.2
+  },
+  {
+    "suburb": "Sale",
+    "median_price": 479000,
+    "annual_change_pct": 4.1
+  },
+  {
+    "suburb": "San Remo",
+    "median_price": 940000,
+    "annual_change_pct": -9.6
+  },
+  {
+    "suburb": "Sanctuary Lakes",
+    "median_price": 752500,
+    "annual_change_pct": 1.1
+  },
+  {
+    "suburb": "Sandhurst",
+    "median_price": 990000,
+    "annual_change_pct": -1
+  },
+  {
+    "suburb": "Sandringham",
+    "median_price": 2140000,
+    "annual_change_pct": 4.5
+  },
+  {
+    "suburb": "Sassafras",
+    "median_price": 1150000,
+    "annual_change_pct": -10.9
+  },
+  {
+    "suburb": "Scoresby",
+    "median_price": 969300,
+    "annual_change_pct": 6.5
+  },
+  {
+    "suburb": "Sea Lake",
+    "median_price": 142500,
+    "annual_change_pct": -10.7
+  },
+  {
+    "suburb": "Seabrook",
+    "median_price": 765000,
+    "annual_change_pct": 2
+  },
+  {
+    "suburb": "Seaford",
+    "median_price": 847500,
+    "annual_change_pct": 1.7
+  },
+  {
+    "suburb": "Seaholme",
+    "median_price": 1570000,
+    "annual_change_pct": 0
+  },
+  {
+    "suburb": "Sebastopol",
+    "median_price": 425000,
+    "annual_change_pct": -9.1
+  },
+  {
+    "suburb": "Seddon",
+    "median_price": 1100000,
+    "annual_change_pct": 0.9
+  },
+  {
+    "suburb": "Selby",
+    "median_price": 900000,
+    "annual_change_pct": 10.4
+  },
+  {
+    "suburb": "Seville",
+    "median_price": 871500,
+    "annual_change_pct": -3.2
+  },
+  {
+    "suburb": "Seymour",
+    "median_price": 450000,
+    "annual_change_pct": -13.5
+  },
+  {
+    "suburb": "Shepparton",
+    "median_price": 480000,
+    "annual_change_pct": 6.1
+  },
+  {
+    "suburb": "Shepparton North",
+    "median_price": 599000,
+    "annual_change_pct": -45.5
+  },
+  {
+    "suburb": "Shoreham",
+    "median_price": 1770000,
+    "annual_change_pct": 4.1
+  },
+  {
+    "suburb": "Skye",
+    "median_price": 753300,
+    "annual_change_pct": 3.9
+  },
+  {
+    "suburb": "Smiths Beach",
+    "median_price": 1058500,
+    "annual_change_pct": -1.5
+  },
+  {
+    "suburb": "Smythes Creek",
+    "median_price": 515000,
+    "annual_change_pct": null
+  },
+  {
+    "suburb": "Smythesdale",
+    "median_price": 505000,
+    "annual_change_pct": -4.7
+  },
+  {
+    "suburb": "Soldiers Hill",
+    "median_price": 570000,
+    "annual_change_pct": -10.9
+  },
+  {
+    "suburb": "Somers",
+    "median_price": 1143800,
+    "annual_change_pct": -26.2
+  },
+  {
+    "suburb": "Somerville",
+    "median_price": 865000,
+    "annual_change_pct": 14.2
+  },
+  {
+    "suburb": "Sorrento",
+    "median_price": 2400000,
+    "annual_change_pct": 6.7
+  },
+  {
+    "suburb": "South Geelong",
+    "median_price": 952500,
+    "annual_change_pct": 27
+  },
+  {
+    "suburb": "South Kingsville",
+    "median_price": 1157500,
+    "annual_change_pct": -9.6
+  },
+  {
+    "suburb": "South Melbourne",
+    "median_price": 1610000,
+    "annual_change_pct": -29.1
+  },
+  {
+    "suburb": "South Morang",
+    "median_price": 780000,
+    "annual_change_pct": 9.1
+  },
+  {
+    "suburb": "South Yarra",
+    "median_price": 2162500,
+    "annual_change_pct": -19.9
+  },
+  {
+    "suburb": "Spotswood",
+    "median_price": 1200000,
+    "annual_change_pct": -2.4
+  },
+  {
+    "suburb": "Spring Gully",
+    "median_price": 650000,
+    "annual_change_pct": 12.1
+  },
+  {
+    "suburb": "Springvale",
+    "median_price": 860000,
+    "annual_change_pct": -2.3
+  },
+  {
+    "suburb": "Springvale South",
+    "median_price": 840300,
+    "annual_change_pct": 4.4
+  },
+  {
+    "suburb": "St Albans",
+    "median_price": 651000,
+    "annual_change_pct": 0.2
+  },
+  {
+    "suburb": "St Albans Park",
+    "median_price": 562500,
+    "annual_change_pct": -4.5
+  },
+  {
+    "suburb": "St Andrews Beach",
+    "median_price": 3500000,
+    "annual_change_pct": 125.8
+  },
+  {
+    "suburb": "St Arnaud",
+    "median_price": 242000,
+    "annual_change_pct": -11.2
+  },
+  {
+    "suburb": "St Helena",
+    "median_price": 1163700,
+    "annual_change_pct": 2.6
+  },
+  {
+    "suburb": "St Kilda",
+    "median_price": 1270000,
+    "annual_change_pct": 8.9
+  },
+  {
+    "suburb": "St Kilda East",
+    "median_price": 2110000,
+    "annual_change_pct": 59.7
+  },
+  {
+    "suburb": "St Kilda West",
+    "median_price": 1830000,
+    "annual_change_pct": -51.8
+  },
+  {
+    "suburb": "St Leonards",
+    "median_price": 720000,
+    "annual_change_pct": -5.9
+  },
+  {
+    "suburb": "Stanhope",
+    "median_price": 410000,
+    "annual_change_pct": 3.3
+  },
+  {
+    "suburb": "Stawell",
+    "median_price": 310000,
+    "annual_change_pct": -8.8
+  },
+  {
+    "suburb": "Stratford",
+    "median_price": 420000,
+    "annual_change_pct": -14.8
+  },
+  {
+    "suburb": "Strathdale",
+    "median_price": 597500,
+    "annual_change_pct": -12.8
+  },
+  {
+    "suburb": "Strathfieldsaye",
+    "median_price": 690000,
+    "annual_change_pct": -2.8
+  },
+  {
+    "suburb": "Strathmerton",
+    "median_price": 330000,
+    "annual_change_pct": 3.1
+  },
+  {
+    "suburb": "Strathmore",
+    "median_price": 1628500,
+    "annual_change_pct": 19
+  },
+  {
+    "suburb": "Strathmore Heights",
+    "median_price": 1050000,
+    "annual_change_pct": -11.9
+  },
+  {
+    "suburb": "Strathtulloh",
+    "median_price": 629000,
+    "annual_change_pct": 6.1
+  },
+  {
+    "suburb": "Studfield",
+    "median_price": 953000,
+    "annual_change_pct": 3.6
+  },
+  {
+    "suburb": "Sunbury",
+    "median_price": 650000,
+    "annual_change_pct": 0
+  },
+  {
+    "suburb": "Sunderland Bay",
+    "median_price": 575000,
+    "annual_change_pct": -10.5
+  },
+  {
+    "suburb": "Sunnycliffs",
+    "median_price": 322300,
+    "annual_change_pct": -15.8
+  },
+  {
+    "suburb": "Sunset Strip",
+    "median_price": 640000,
+    "annual_change_pct": 2.4
+  },
+  {
+    "suburb": "Sunshine",
+    "median_price": 840000,
+    "annual_change_pct": 12.7
+  },
+  {
+    "suburb": "Sunshine North",
+    "median_price": 725000,
+    "annual_change_pct": 0.7
+  },
+  {
+    "suburb": "Sunshine West",
+    "median_price": 685000,
+    "annual_change_pct": 6.9
+  },
+  {
+    "suburb": "Surf Beach",
+    "median_price": 802500,
+    "annual_change_pct": -12.8
+  },
+  {
+    "suburb": "Surrey Hills",
+    "median_price": 2325000,
+    "annual_change_pct": 0.5
+  },
+  {
+    "suburb": "Swan Hill",
+    "median_price": 499000,
+    "annual_change_pct": 11.4
+  },
+  {
+    "suburb": "Sydenham",
+    "median_price": 757000,
+    "annual_change_pct": 8.1
+  },
+  {
+    "suburb": "Syndal",
+    "median_price": 1657500,
+    "annual_change_pct": -4.1
+  },
+  {
+    "suburb": "Tallangatta",
+    "median_price": 445000,
+    "annual_change_pct": 10.9
+  },
+  {
+    "suburb": "Tangambalanga",
+    "median_price": 795000,
+    "annual_change_pct": 91.1
+  },
+  {
+    "suburb": "Tarneit",
+    "median_price": 653000,
+    "annual_change_pct": -1.1
+  },
+  {
+    "suburb": "Tatura",
+    "median_price": 440000,
+    "annual_change_pct": -4.3
+  },
+  {
+    "suburb": "Tawonga South",
+    "median_price": 720000,
+    "annual_change_pct": 10.8
+  },
+  {
+    "suburb": "Taylors Hill",
+    "median_price": 891000,
+    "annual_change_pct": 1.5
+  },
+  {
+    "suburb": "Taylors Lakes",
+    "median_price": 945000,
+    "annual_change_pct": 8.6
+  },
+  {
+    "suburb": "Tecoma",
+    "median_price": 900000,
+    "annual_change_pct": 11.8
+  },
+  {
+    "suburb": "Templestowe",
+    "median_price": 1637500,
+    "annual_change_pct": -3.7
+  },
+  {
+    "suburb": "Templestowe Lower",
+    "median_price": 1440000,
+    "annual_change_pct": -8.3
+  },
+  {
+    "suburb": "Terang",
+    "median_price": 440000,
+    "annual_change_pct": 14.3
+  },
+  {
+    "suburb": "The Basin",
+    "median_price": 917500,
+    "annual_change_pct": 0.2
+  },
+  {
+    "suburb": "Thomastown",
+    "median_price": 738900,
+    "annual_change_pct": 5.6
+  },
+  {
+    "suburb": "Thomson (Greater Geelong)",
+    "median_price": 515000,
+    "annual_change_pct": -8.4
+  },
+  {
+    "suburb": "Thornbury",
+    "median_price": 1460000,
+    "annual_change_pct": 6.2
+  },
+  {
+    "suburb": "Thornhill Park",
+    "median_price": 605000,
+    "annual_change_pct": -4.7
+  },
+  {
+    "suburb": "Timboon",
+    "median_price": 534500,
+    "annual_change_pct": -4.2
+  },
+  {
+    "suburb": "Tongala",
+    "median_price": 415000,
+    "annual_change_pct": -4.6
+  },
+  {
+    "suburb": "Toora",
+    "median_price": 540000,
+    "annual_change_pct": null
+  },
+  {
+    "suburb": "Tooradin",
+    "median_price": 832500,
+    "annual_change_pct": -1
+  },
+  {
+    "suburb": "Toorak",
+    "median_price": 4805000,
+    "annual_change_pct": -27.5
+  },
+  {
+    "suburb": "Tootgarook",
+    "median_price": 865000,
+    "annual_change_pct": 2.1
+  },
+  {
+    "suburb": "Torquay",
+    "median_price": 1250000,
+    "annual_change_pct": -7.4
+  },
+  {
+    "suburb": "Trafalgar",
+    "median_price": 580000,
+    "annual_change_pct": 8.7
+  },
+  {
+    "suburb": "Traralgon",
+    "median_price": 535000,
+    "annual_change_pct": 10.3
+  },
+  {
+    "suburb": "Traralgon East",
+    "median_price": 727500,
+    "annual_change_pct": null
+  },
+  {
+    "suburb": "Trentham",
+    "median_price": 1177500,
+    "annual_change_pct": 51
+  },
+  {
+    "suburb": "Truganina",
+    "median_price": 652500,
+    "annual_change_pct": 4.2
+  },
+  {
+    "suburb": "Tullamarine",
+    "median_price": 700000,
+    "annual_change_pct": -4.1
+  },
+  {
+    "suburb": "Tyabb",
+    "median_price": 872500,
+    "annual_change_pct": 19.5
+  },
+  {
+    "suburb": "Upper Ferntree Gully",
+    "median_price": 835000,
+    "annual_change_pct": 6.7
+  },
+  {
+    "suburb": "Upwey",
+    "median_price": 940000,
+    "annual_change_pct": 14.5
+  },
+  {
+    "suburb": "Ventnor",
+    "median_price": 865000,
+    "annual_change_pct": 0
+  },
+  {
+    "suburb": "Venus Bay",
+    "median_price": 620000,
+    "annual_change_pct": 0
+  },
+  {
+    "suburb": "Vermont",
+    "median_price": 1196000,
+    "annual_change_pct": -0.3
+  },
+  {
+    "suburb": "Vermont South",
+    "median_price": 1563000,
+    "annual_change_pct": 4.3
+  },
+  {
+    "suburb": "Viewbank",
+    "median_price": 1225000,
+    "annual_change_pct": 13.1
+  },
+  {
+    "suburb": "Violet Town",
+    "median_price": 480000,
+    "annual_change_pct": -9.4
+  },
+  {
+    "suburb": "Wahgunyah",
+    "median_price": 520000,
+    "annual_change_pct": -14.8
+  },
+  {
+    "suburb": "Wallan",
+    "median_price": 606300,
+    "annual_change_pct": -0.6
+  },
+  {
+    "suburb": "Wallan East",
+    "median_price": 585000,
+    "annual_change_pct": 3.8
+  },
+  {
+    "suburb": "Wandana Heights",
+    "median_price": 860000,
+    "annual_change_pct": 3.6
+  },
+  {
+    "suburb": "Wandin North",
+    "median_price": 880000,
+    "annual_change_pct": 10
+  },
+  {
+    "suburb": "Wangaratta",
+    "median_price": 547500,
+    "annual_change_pct": 13.2
+  },
+  {
+    "suburb": "Wantirna",
+    "median_price": 1082000,
+    "annual_change_pct": 2.8
+  },
+  {
+    "suburb": "Wantirna South",
+    "median_price": 1284000,
+    "annual_change_pct": 3.5
+  },
+  {
+    "suburb": "Warburton",
+    "median_price": 560000,
+    "annual_change_pct": -24.3
+  },
+  {
+    "suburb": "Warracknabeal",
+    "median_price": 247000,
+    "annual_change_pct": 15.4
+  },
+  {
+    "suburb": "Warragul",
+    "median_price": 628500,
+    "annual_change_pct": -0.2
+  },
+  {
+    "suburb": "Warrandyte",
+    "median_price": 1550000,
+    "annual_change_pct": 7.3
+  },
+  {
+    "suburb": "Warranwood",
+    "median_price": 1256000,
+    "annual_change_pct": 17.1
+  },
+  {
+    "suburb": "Warrnambool",
+    "median_price": 565000,
+    "annual_change_pct": -8.9
+  },
+  {
+    "suburb": "Waterways",
+    "median_price": 1489000,
+    "annual_change_pct": -11.9
+  },
+  {
+    "suburb": "Watsonia",
+    "median_price": 1005000,
+    "annual_change_pct": 28.9
+  },
+  {
+    "suburb": "Watsonia North",
+    "median_price": 963500,
+    "annual_change_pct": 5.2
+  },
+  {
+    "suburb": "Wattle Glen",
+    "median_price": 1232000,
+    "annual_change_pct": null
+  },
+  {
+    "suburb": "Waurn Ponds",
+    "median_price": 790000,
+    "annual_change_pct": -1.9
+  },
+  {
+    "suburb": "Wedderburn",
+    "median_price": 212500,
+    "annual_change_pct": -26.7
+  },
+  {
+    "suburb": "Weir Views",
+    "median_price": 575000,
+    "annual_change_pct": -0.3
+  },
+  {
+    "suburb": "Wendouree",
+    "median_price": 435000,
+    "annual_change_pct": -7.4
+  },
+  {
+    "suburb": "Wendouree West",
+    "median_price": 325000,
+    "annual_change_pct": -11
+  },
+  {
+    "suburb": "Werribee",
+    "median_price": 612500,
+    "annual_change_pct": 2.1
+  },
+  {
+    "suburb": "Werribee South",
+    "median_price": 900000,
+    "annual_change_pct": -13.3
+  },
+  {
+    "suburb": "West Footscray",
+    "median_price": 908000,
+    "annual_change_pct": 1.7
+  },
+  {
+    "suburb": "West Melbourne",
+    "median_price": 1175000,
+    "annual_change_pct": -7.5
+  },
+  {
+    "suburb": "West Wodonga",
+    "median_price": 565000,
+    "annual_change_pct": 2.8
+  },
+  {
+    "suburb": "Westall",
+    "median_price": 895500,
+    "annual_change_pct": 1.8
+  },
+  {
+    "suburb": "Westgarth",
+    "median_price": 1725000,
+    "annual_change_pct": -11.5
+  },
+  {
+    "suburb": "Westmeadows",
+    "median_price": 662500,
+    "annual_change_pct": -9.2
+  },
+  {
+    "suburb": "Wheelers Hill",
+    "median_price": 1445000,
+    "annual_change_pct": -3.7
+  },
+  {
+    "suburb": "White Hills",
+    "median_price": 546000,
+    "annual_change_pct": 17.4
+  },
+  {
+    "suburb": "Whittington",
+    "median_price": 535000,
+    "annual_change_pct": 8.6
+  },
+  {
+    "suburb": "Whittlesea",
+    "median_price": 672500,
+    "annual_change_pct": -6.6
+  },
+  {
+    "suburb": "Williams Landing",
+    "median_price": 800000,
+    "annual_change_pct": -0.6
+  },
+  {
+    "suburb": "Williamstown",
+    "median_price": 1664000,
+    "annual_change_pct": 13.2
+  },
+  {
+    "suburb": "Williamstown North",
+    "median_price": 972500,
+    "annual_change_pct": -23.7
+  },
+  {
+    "suburb": "Wimbledon Heights",
+    "median_price": 549500,
+    "annual_change_pct": -11.4
+  },
+  {
+    "suburb": "Winchelsea",
+    "median_price": 722500,
+    "annual_change_pct": 19.4
+  },
+  {
+    "suburb": "Windsor",
+    "median_price": 1382500,
+    "annual_change_pct": -9.3
+  },
+  {
+    "suburb": "Winter Valley",
+    "median_price": 575000,
+    "annual_change_pct": -0.9
+  },
+  {
+    "suburb": "Wodonga",
+    "median_price": 525000,
+    "annual_change_pct": 5
+  },
+  {
+    "suburb": "Wollert",
+    "median_price": 690800,
+    "annual_change_pct": -2.7
+  },
+  {
+    "suburb": "Wonga Park",
+    "median_price": 1447500,
+    "annual_change_pct": 32.5
+  },
+  {
+    "suburb": "Wonthaggi",
+    "median_price": 580000,
+    "annual_change_pct": 0
+  },
+  {
+    "suburb": "Woodend",
+    "median_price": 840000,
+    "annual_change_pct": -2.9
+  },
+  {
+    "suburb": "Woolamai Waters",
+    "median_price": 752500,
+    "annual_change_pct": -11.5
+  },
+  {
+    "suburb": "Woori Yallock",
+    "median_price": 635000,
+    "annual_change_pct": 3
+  },
+  {
+    "suburb": "Wy Yung",
+    "median_price": 518500,
+    "annual_change_pct": 18.5
+  },
+  {
+    "suburb": "Wyndham Vale",
+    "median_price": 589900,
+    "annual_change_pct": 7.3
+  },
+  {
+    "suburb": "Yackandandah",
+    "median_price": 580000,
+    "annual_change_pct": -8.7
+  },
+  {
+    "suburb": "Yallambie",
+    "median_price": 1010000,
+    "annual_change_pct": 3.6
+  },
+  {
+    "suburb": "Yallourn North",
+    "median_price": 299000,
+    "annual_change_pct": -6.6
+  },
+  {
+    "suburb": "Yarra Glen",
+    "median_price": 740000,
+    "annual_change_pct": -5.4
+  },
+  {
+    "suburb": "Yarra Junction",
+    "median_price": 700000,
+    "annual_change_pct": -1.3
+  },
+  {
+    "suburb": "Yarragon",
+    "median_price": 610000,
+    "annual_change_pct": -12.2
+  },
+  {
+    "suburb": "Yarram",
+    "median_price": 427500,
+    "annual_change_pct": 10.3
+  },
+  {
+    "suburb": "Yarraville",
+    "median_price": 1165000,
+    "annual_change_pct": 6.9
+  },
+  {
+    "suburb": "Yarrawonga",
+    "median_price": 657500,
+    "annual_change_pct": 10.5
+  },
+  {
+    "suburb": "Yea",
+    "median_price": 545000,
+    "annual_change_pct": 12.4
+  },
+  {
+    "suburb": "Yinnar",
+    "median_price": 480000,
+    "annual_change_pct": -15
+  }
+]

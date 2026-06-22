@@ -4,12 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Melbourne Property Price Map</title>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIINfQmB5pX1l3XGQjQ6OZNdF1Q6y+5xR5p8="
-      crossorigin=""
-    >
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -36,6 +31,24 @@
 
     <main>
       <section class="panel map-section map-feature" aria-labelledby="map-heading">
+        <div class="data-controls" aria-label="Dataset controls">
+          <label>
+            <span>View</span>
+            <select id="dataset-mode">
+              <option value="quarter">Single quarter</option>
+              <option value="year">Year summary</option>
+            </select>
+          </label>
+          <label id="quarter-control">
+            <span>Quarter</span>
+            <select id="quarter-select"></select>
+          </label>
+          <label id="year-control" hidden>
+            <span>Year</span>
+            <select id="year-select"></select>
+          </label>
+          <p id="data-warning" class="data-warning" aria-live="polite"></p>
+        </div>
         <div class="section-heading map-heading">
           <div>
             <p class="section-kicker">Geography</p>
@@ -47,7 +60,10 @@
             <button type="button" data-map-mode="change">Annual change</button>
           </div>
         </div>
-        <div id="suburb-map" class="suburb-map" role="img" aria-label="Map of suburb data points"></div>
+        <div class="map-shell">
+          <button type="button" id="fullscreen-map" class="map-fullscreen-button">Fullscreen</button>
+          <div id="suburb-map" class="suburb-map" role="img" aria-label="Map of suburb data points"></div>
+        </div>
         <div id="map-legend" class="map-legend"></div>
       </section>
 
@@ -143,9 +159,9 @@
           <table>
             <thead>
               <tr>
-                <th>Suburb</th>
-                <th>Median price</th>
-                <th>Annual change</th>
+                <th><button type="button" data-sort="suburb">Suburb</button></th>
+                <th><button type="button" data-sort="median_price">Median price</button></th>
+                <th><button type="button" data-sort="annual_change_pct">Annual change</button></th>
               </tr>
             </thead>
             <tbody id="suburb-table"></tbody>
@@ -186,11 +202,7 @@
       <a href="data/property-median-house-suburb.class.csv">Download class CSV</a>
     </footer>
 
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
+    <script src="vendor/leaflet/leaflet.js"></script>
     <script type="module" src="app.js"></script>
   </body>
 </html>
