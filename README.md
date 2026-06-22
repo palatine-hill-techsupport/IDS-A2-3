@@ -77,3 +77,5 @@ If Pages is not already enabled for the repository, set **Settings > Pages > Sou
 - Map centroids: Matthew Proctor Australian Postcodes database
 - Hero image: Pexels
 - Map library and tiles: Leaflet with OpenStreetMap tiles
+
+The original hero image is kept locally at `assets/source/brand-image.jpg` and ignored because it is large. The deployed dashboard uses the optimised copy at `public/assets/melbourne-hero.jpg`.

@@ -4,3 +4,4 @@ node_modules/
 dist/
 *.log
 brand-image.jpg
+assets/source/brand-image.jpg
