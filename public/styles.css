@@ -61,19 +61,6 @@ input {
   z-index: 1;
 }
 
-.hero-credit {
-  position: absolute;
-  right: clamp(16px, 4vw, 40px);
-  bottom: 16px;
-  z-index: 1;
-  padding: 6px 9px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.82);
-  color: var(--slate);
-  font-size: 0.78rem;
-  text-decoration: none;
-}
-
 .eyebrow,
 .section-kicker {
   margin: 0 0 8px;
@@ -332,7 +319,13 @@ main {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--sky);
+  background:
+    radial-gradient(circle at 58% 52%, rgba(143, 191, 209, 0.36) 0 10%, transparent 28%),
+    radial-gradient(circle at 46% 46%, rgba(52, 116, 95, 0.12) 0 12%, transparent 30%),
+    linear-gradient(rgba(46, 70, 88, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 70, 88, 0.055) 1px, transparent 1px),
+    #eaf3f6;
+  background-size: auto, auto, 96px 96px, 96px 96px, auto;
 }
 
 .map-feature .suburb-map {
@@ -340,7 +333,25 @@ main {
 }
 
 .leaflet-container {
+  background: transparent;
   font: inherit;
+}
+
+.map-place-label {
+  width: 150px !important;
+  height: auto !important;
+  padding: 5px 8px;
+  border: 1px solid rgba(215, 225, 232, 0.95);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: rgba(46, 70, 88, 0.82);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(23, 35, 51, 0.08);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.95), 0 -1px 0 rgba(255, 255, 255, 0.86);
+  text-transform: uppercase;
 }
 
 .leaflet-popup-content-wrapper,

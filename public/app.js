@@ -46,8 +46,16 @@ const elements = {
 
 const MELBOURNE_VIEW = {
   center: [-37.86, 145.02],
-  zoom: 10
+  zoom: 9
 };
+
+const MAP_LABELS = [
+  { name: "Melbourne", lat: -37.8136, lon: 144.9631 },
+  { name: "Geelong", lat: -38.1499, lon: 144.3617 },
+  { name: "Ballarat", lat: -37.5622, lon: 143.8503 },
+  { name: "Bendigo", lat: -36.757, lon: 144.2794 },
+  { name: "Mornington Peninsula", lat: -38.315, lon: 145.02 }
+];
 
 let mapState = null;
 
@@ -310,27 +318,22 @@ function initialiseMap(rows, centroidData) {
     .map((row) => ({ ...row, ...centroidBySuburb.get(normaliseName(row.suburb)) }))
     .filter((row) => Number.isFinite(row.lat) && Number.isFinite(row.lon));
 
-  elements.mapCount.textContent = `${mappedRows.length} of ${rows.length} suburbs plotted. Map opens on Greater Melbourne; pan or zoom out for regional suburbs.`;
+  elements.mapCount.textContent = `${mappedRows.length} of ${rows.length} suburbs plotted. The map opens on Greater Melbourne; pan or zoom out for regional suburbs.`;
 
   const map = L.map(elements.map, {
-    fadeAnimation: false,
-    inertia: false,
+    attributionControl: false,
     markerZoomAnimation: false,
+    maxZoom: 12,
+    minZoom: 7,
     // Canvas keeps the 700+ suburb points responsive without hundreds of SVG nodes.
     renderer: L.canvas({ padding: 0.35, tolerance: 8 }),
     scrollWheelZoom: false,
     tap: false,
-    zoomAnimation: false,
     preferCanvas: true
   }).setView(MELBOURNE_VIEW.center, MELBOURNE_VIEW.zoom);
-
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    keepBuffer: 1,
-    maxZoom: 18,
-    updateWhenIdle: true,
-    updateWhenZooming: false,
-    attribution: "&copy; OpenStreetMap contributors"
-  }).addTo(map);
+  map.createPane("labelPane");
+  map.getPane("labelPane").style.zIndex = 650;
+  map.getPane("labelPane").style.pointerEvents = "none";
 
   const layer = L.layerGroup().addTo(map);
   const bounds = L.latLngBounds(mappedRows.map((row) => [row.lat, row.lon]));
@@ -367,10 +370,34 @@ function initialiseMap(rows, centroidData) {
     return { marker, row };
   });
 
+  MAP_LABELS.forEach((label) => {
+    L.marker([label.lat, label.lon], {
+      icon: L.divIcon({
+        className: "map-place-label",
+        html: escapeHtml(label.name),
+        iconSize: [150, 24],
+        iconAnchor: [75, 12]
+      }),
+      interactive: false,
+      keyboard: false,
+      pane: "labelPane"
+    }).addTo(layer);
+  });
+
   renderMapMarkers("price");
   if (bounds.isValid()) map.setMaxBounds(bounds.pad(0.35));
 
-  setTimeout(() => map.invalidateSize(), 150);
+  const refreshMapSize = () => map.invalidateSize({ pan: false });
+  requestAnimationFrame(refreshMapSize);
+  setTimeout(refreshMapSize, 150);
+  setTimeout(refreshMapSize, 600);
+  window.addEventListener("load", refreshMapSize, { once: true });
+
+  if ("ResizeObserver" in window) {
+    const resizeObserver = new ResizeObserver(refreshMapSize);
+    resizeObserver.observe(elements.map);
+    mapState.resizeObserver = resizeObserver;
+  }
 }
 
 function renderSummary(rows) {
