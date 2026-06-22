@@ -382,6 +382,10 @@ main {
   font: inherit;
 }
 
+.leaflet-localBasemap-pane {
+  transition: opacity 180ms ease;
+}
+
 .map-fullscreen-button {
   position: absolute;
   top: 12px;

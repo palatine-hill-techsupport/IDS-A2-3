@@ -69,54 +69,6 @@ const BASEMAP_BOUNDS = [
   [-39.35, 140.75],
   [-33.75, 150.25]
 ];
-const LOCAL_BASEMAP = {
-  bay: [
-    [-37.82, 144.77],
-    [-37.92, 144.62],
-    [-38.12, 144.66],
-    [-38.31, 144.84],
-    [-38.39, 145.1],
-    [-38.29, 145.31],
-    [-38.07, 145.29],
-    [-37.9, 145.12],
-    [-37.82, 144.95]
-  ],
-  roads: [
-    [
-      [-37.82, 144.96],
-      [-37.9, 145.08],
-      [-38.02, 145.2],
-      [-38.14, 145.38]
-    ],
-    [
-      [-37.82, 144.96],
-      [-37.75, 144.84],
-      [-37.66, 144.68],
-      [-37.55, 144.48]
-    ],
-    [
-      [-37.72, 144.75],
-      [-37.69, 144.9],
-      [-37.72, 145.05],
-      [-37.82, 145.18]
-    ],
-    [
-      [-37.81, 144.96],
-      [-37.79, 145.08],
-      [-37.77, 145.22],
-      [-37.75, 145.36]
-    ]
-  ],
-  waterways: [
-    [
-      [-37.76, 144.82],
-      [-37.8, 144.9],
-      [-37.82, 144.97],
-      [-37.82, 145.05],
-      [-37.81, 145.16]
-    ]
-  ]
-};
 
 let mapState = null;
 const appState = {
@@ -469,53 +421,26 @@ function initialiseMap(rows, centroidData) {
   }).setView(MELBOURNE_VIEW.center, MELBOURNE_VIEW.zoom);
   map.createPane("labelPane");
   map.createPane("localBasemapPane");
-  map.getPane("localBasemapPane").style.zIndex = 250;
+  const localBasemapPane = map.getPane("localBasemapPane");
+  localBasemapPane.style.zIndex = 150;
   map.getPane("localBasemapPane").style.pointerEvents = "none";
   map.getPane("labelPane").style.zIndex = 650;
   map.getPane("labelPane").style.pointerEvents = "none";
 
   L.imageOverlay("assets/victoria-basemap.svg", BASEMAP_BOUNDS, {
     pane: "localBasemapPane",
-    opacity: 0.82,
+    opacity: 0.24,
     interactive: false
   }).addTo(map);
 
-  const basemapRenderer = L.svg({ pane: "localBasemapPane", padding: 0.5 });
-  L.polygon(LOCAL_BASEMAP.bay, {
-    pane: "localBasemapPane",
-    renderer: basemapRenderer,
-    color: "#78aebe",
-    weight: 2,
-    fillColor: "#b6dbe5",
-    fillOpacity: 0.82,
-    interactive: false
-  }).addTo(map);
-  LOCAL_BASEMAP.roads.forEach((road) => {
-    L.polyline(road, {
-      pane: "localBasemapPane",
-      renderer: basemapRenderer,
-      color: "#d1a35f",
-      weight: 5,
-      opacity: 0.9,
-      interactive: false
-    }).addTo(map);
-  });
-  LOCAL_BASEMAP.waterways.forEach((waterway) => {
-    L.polyline(waterway, {
-      pane: "localBasemapPane",
-      renderer: basemapRenderer,
-      color: "#6fa8ba",
-      weight: 3,
-      opacity: 0.92,
-      interactive: false
-    }).addTo(map);
-  });
-
-  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+  const baseTileLayer = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
     maxZoom: 12,
     minZoom: 7,
     attribution: "Tiles &copy; Esri, OpenStreetMap contributors"
   }).addTo(map);
+  baseTileLayer.once("tileload", () => {
+    localBasemapPane.style.opacity = "0";
+  });
 
   L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}", {
     maxZoom: 12,
