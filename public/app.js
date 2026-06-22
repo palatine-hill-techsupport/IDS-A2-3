@@ -44,6 +44,11 @@ const elements = {
   mapModeButtons: document.querySelectorAll("[data-map-mode]")
 };
 
+const MELBOURNE_VIEW = {
+  center: [-37.86, 145.02],
+  zoom: 10
+};
+
 let mapState = null;
 
 function escapeHtml(value) {
@@ -245,33 +250,36 @@ function popupHtml(row) {
   `;
 }
 
+function mapMarkerStyle(row, mode, priceExtent, changeExtent) {
+  const ratio =
+    mode === "price"
+      ? clamp((row.median_price - priceExtent.min) / (priceExtent.max - priceExtent.min || 1))
+      : clamp(Math.abs(row.annual_change_pct) / Math.max(Math.abs(changeExtent.min), Math.abs(changeExtent.max), 1));
+  const colour =
+    mode === "price"
+      ? priceColour(row.median_price, priceExtent.min, priceExtent.max)
+      : changeColour(row.annual_change_pct, changeExtent.min, changeExtent.max);
+
+  return {
+    radius: 4.5 + ratio * 8,
+    color: "#ffffff",
+    weight: 1,
+    fillColor: colour,
+    fillOpacity: 0.76
+  };
+}
+
 function renderMapMarkers(mode = "price") {
   if (!mapState) return;
 
-  const { L, layer, mappedRows, priceExtent, changeExtent } = mapState;
-  layer.clearLayers();
-
-  for (const row of mappedRows) {
-    const value = mode === "price" ? row.median_price : row.annual_change_pct;
-    const ratio =
-      mode === "price"
-        ? clamp((row.median_price - priceExtent.min) / (priceExtent.max - priceExtent.min || 1))
-        : clamp(Math.abs(row.annual_change_pct) / Math.max(Math.abs(changeExtent.min), Math.abs(changeExtent.max), 1));
-    const colour =
-      mode === "price"
-        ? priceColour(row.median_price, priceExtent.min, priceExtent.max)
-        : changeColour(row.annual_change_pct, changeExtent.min, changeExtent.max);
-
-    L.circleMarker([row.lat, row.lon], {
-      radius: 5 + ratio * 9,
-      color: "#ffffff",
-      weight: 1,
-      fillColor: colour,
-      fillOpacity: 0.78
-    })
-      .bindPopup(popupHtml(row))
-      .addTo(layer);
+  const { markers, priceExtent, changeExtent } = mapState;
+  for (const { marker, row } of markers) {
+    const style = mapMarkerStyle(row, mode, priceExtent, changeExtent);
+    marker.setStyle(style);
+    marker.setRadius(style.radius);
   }
+  elements.map.dataset.markerCount = String(markers.length);
+  elements.map.dataset.currentMode = mode;
 
   elements.mapLegend.innerHTML =
     mode === "price"
@@ -302,15 +310,25 @@ function initialiseMap(rows, centroidData) {
     .map((row) => ({ ...row, ...centroidBySuburb.get(normaliseName(row.suburb)) }))
     .filter((row) => Number.isFinite(row.lat) && Number.isFinite(row.lon));
 
-  elements.mapCount.textContent = `${mappedRows.length} of ${rows.length} suburbs plotted with static centroid coordinates.`;
+  elements.mapCount.textContent = `${mappedRows.length} of ${rows.length} suburbs plotted. Map opens on Greater Melbourne; pan or zoom out for regional suburbs.`;
 
   const map = L.map(elements.map, {
+    fadeAnimation: false,
+    inertia: false,
+    markerZoomAnimation: false,
+    // Canvas keeps the 700+ suburb points responsive without hundreds of SVG nodes.
+    renderer: L.canvas({ padding: 0.35, tolerance: 8 }),
     scrollWheelZoom: false,
+    tap: false,
+    zoomAnimation: false,
     preferCanvas: true
-  }).setView([-37.8136, 144.9631], 10);
+  }).setView(MELBOURNE_VIEW.center, MELBOURNE_VIEW.zoom);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    keepBuffer: 1,
     maxZoom: 18,
+    updateWhenIdle: true,
+    updateWhenZooming: false,
     attribution: "&copy; OpenStreetMap contributors"
   }).addTo(map);
 
@@ -324,12 +342,33 @@ function initialiseMap(rows, centroidData) {
     map,
     layer,
     mappedRows,
+    markers: [],
     priceExtent: { min: Math.min(...prices), max: Math.max(...prices) },
     changeExtent: { min: Math.min(...changes), max: Math.max(...changes) }
   };
 
+  mapState.markers = mappedRows.map((row) => {
+    const style = mapMarkerStyle(row, "price", mapState.priceExtent, mapState.changeExtent);
+    const marker = L.circleMarker([row.lat, row.lon], {
+      ...style,
+      bubblingMouseEvents: false,
+      interactive: true,
+      renderer: map.options.renderer
+    })
+      .bindTooltip(popupHtml(row), {
+        className: "map-tooltip",
+        direction: "top",
+        opacity: 0.96,
+        sticky: true
+      })
+      .bindPopup(popupHtml(row))
+      .addTo(layer);
+
+    return { marker, row };
+  });
+
   renderMapMarkers("price");
-  if (bounds.isValid()) map.fitBounds(bounds.pad(0.08));
+  if (bounds.isValid()) map.setMaxBounds(bounds.pad(0.35));
 
   setTimeout(() => map.invalidateSize(), 150);
 }

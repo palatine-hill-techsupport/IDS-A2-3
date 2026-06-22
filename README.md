@@ -16,11 +16,14 @@ The dashboard source lives in `public/`. The build output is copied to `dist/` f
 The page includes:
 
 - summary cards and ranked suburb lists
+- map-first layout centred on Greater Melbourne
 - top 10 median price bar chart
 - annual growth/decline chart with a toggle
 - median price band distribution chart
 - Leaflet suburb map with price/change toggle
 - searchable suburb table
+
+The map uses Leaflet canvas markers rather than SVG markers so the 700+ plotted suburb points remain reasonably responsive on GitHub Pages.
 
 ## Data pipeline
 

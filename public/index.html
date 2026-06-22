@@ -41,6 +41,22 @@
     </header>
 
     <main>
+      <section class="panel map-section map-feature" aria-labelledby="map-heading">
+        <div class="section-heading map-heading">
+          <div>
+            <p class="section-kicker">Geography</p>
+            <h2 id="map-heading">Suburb map</h2>
+            <p id="map-count">Loading suburb coordinates...</p>
+          </div>
+          <div class="segmented-control" aria-label="Map metric">
+            <button type="button" class="active" data-map-mode="price">Price</button>
+            <button type="button" data-map-mode="change">Annual change</button>
+          </div>
+        </div>
+        <div id="suburb-map" class="suburb-map" role="img" aria-label="Map of suburb data points"></div>
+        <div id="map-legend" class="map-legend"></div>
+      </section>
+
       <section class="stats-grid" aria-label="Summary statistics">
         <article class="stat-tile">
           <span>Total suburbs</span>
@@ -115,22 +131,6 @@
           </div>
           <div id="distribution-chart" class="bar-chart distribution-chart"></div>
         </article>
-      </section>
-
-      <section class="panel map-section" aria-labelledby="map-heading">
-        <div class="section-heading map-heading">
-          <div>
-            <p class="section-kicker">Geography</p>
-            <h2 id="map-heading">Suburb map</h2>
-            <p id="map-count">Loading suburb coordinates...</p>
-          </div>
-          <div class="segmented-control" aria-label="Map metric">
-            <button type="button" class="active" data-map-mode="price">Price</button>
-            <button type="button" data-map-mode="change">Annual change</button>
-          </div>
-        </div>
-        <div id="suburb-map" class="suburb-map" role="img" aria-label="Map of suburb data points"></div>
-        <div id="map-legend" class="map-legend"></div>
       </section>
 
       <section class="panel table-section" aria-labelledby="table-heading">

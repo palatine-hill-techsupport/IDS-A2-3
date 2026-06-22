@@ -315,6 +315,13 @@ main {
   overflow: hidden;
 }
 
+.map-feature {
+  padding: clamp(16px, 2.4vw, 24px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 251, 250, 0.96)),
+    var(--panel);
+}
+
 .map-heading {
   align-items: center;
 }
@@ -328,12 +335,25 @@ main {
   background: var(--sky);
 }
 
+.map-feature .suburb-map {
+  height: clamp(520px, 58vw, 720px);
+}
+
 .leaflet-container {
   font: inherit;
 }
 
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
+  box-shadow: 0 12px 30px rgba(23, 35, 51, 0.16);
+}
+
+.leaflet-tooltip.map-tooltip {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--ink);
   box-shadow: 0 12px 30px rgba(23, 35, 51, 0.16);
 }
 
@@ -514,5 +534,9 @@ footer {
 
   .suburb-map {
     height: 460px;
+  }
+
+  .map-feature .suburb-map {
+    height: 520px;
   }
 }
