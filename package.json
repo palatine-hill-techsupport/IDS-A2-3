@@ -1,0 +1,15 @@
+{
+  "name": "melbourne-property-price-map",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "data:fetch": "node scripts/fetch-property-data.mjs",
+    "data:fetch:full": "node scripts/fetch-property-data.mjs --full",
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {}
+}
