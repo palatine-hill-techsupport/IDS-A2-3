@@ -33,6 +33,9 @@ jobs:
       - name: Fetch and clean class dataset
         run: npm run data:fetch
 
+      - name: Build static suburb centroid lookup
+        run: npm run data:centroids
+
       - name: Build static dashboard
         run: npm run build
 

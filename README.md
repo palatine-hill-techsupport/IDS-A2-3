@@ -1,16 +1,26 @@
 # Melbourne Property Price Map
 
-Static IDS201 dashboard for Victorian median house prices by suburb.
+Static IDS201 dashboard for Victorian median house prices by suburb. The public dashboard keeps the class dataset to three row variables while using separate metadata and centroid files for attribution and mapping.
 
 ## Run locally
 
 ```powershell
 npm install
 npm run data:fetch
+npm run data:centroids
 npm run build
 ```
 
 The dashboard source lives in `public/`. The build output is copied to `dist/` for GitHub Pages.
+
+The page includes:
+
+- summary cards and ranked suburb lists
+- top 10 median price bar chart
+- annual growth/decline chart with a toggle
+- median price band distribution chart
+- Leaflet suburb map with price/change toggle
+- searchable suburb table
 
 ## Data pipeline
 
@@ -35,6 +45,14 @@ Those variables are:
 
 Metadata is kept separately in `public/data/metadata.json`.
 
+The map uses a separate static centroid lookup at `public/data/suburb-centroids.json`, generated from Matthew Proctor's Australian Postcodes database:
+
+```powershell
+npm run data:centroids
+```
+
+This lookup is map support data, not part of the three-variable class dataset. Some suburb names may not have exact centroid matches, so the map notes how many suburbs are plotted.
+
 Full mode keeps extra fields for later tinkering:
 
 ```powershell
@@ -52,3 +70,10 @@ node scripts/fetch-property-data.mjs --full --historical
 `.github/workflows/update-property-data.yml` runs manually and monthly. It installs dependencies, refreshes the class dataset, builds the static dashboard, and deploys the `dist/` folder through GitHub Pages.
 
 If Pages is not already enabled for the repository, set **Settings > Pages > Source** to **GitHub Actions**.
+
+## Credits
+
+- Property data: Victorian Government Data Vic
+- Map centroids: Matthew Proctor Australian Postcodes database
+- Hero image: Pexels
+- Map library and tiles: Leaflet with OpenStreetMap tiles

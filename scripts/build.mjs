@@ -21,6 +21,10 @@ if (!(await exists(path.join(publicDir, "data", "property-median-house-suburb.cl
   throw new Error("Class data is missing. Run npm run data:fetch before npm run build.");
 }
 
+if (!(await exists(path.join(publicDir, "data", "suburb-centroids.json")))) {
+  throw new Error("Suburb centroids are missing. Run npm run data:centroids before npm run build.");
+}
+
 await fs.rm(distDir, { recursive: true, force: true });
 await fs.cp(publicDir, distDir, { recursive: true });
 

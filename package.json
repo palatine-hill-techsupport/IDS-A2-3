@@ -6,6 +6,7 @@
   "scripts": {
     "data:fetch": "node scripts/fetch-property-data.mjs",
     "data:fetch:full": "node scripts/fetch-property-data.mjs --full",
+    "data:centroids": "node scripts/build-suburb-centroids.mjs",
     "build": "node scripts/build.mjs"
   },
   "dependencies": {
