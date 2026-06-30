@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="public/">
+    <title>Melbourne Property Price Map</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIINfQ8E0GthkHISwksn8v3m8Dw3hrbbY5U="
+      crossorigin=""
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">IDS201 Assessment 2/3</p>
+        <h1>Melbourne Property Price Map</h1>
+        <p class="intro">
+          A calm, static visual dashboard for exploring suburb-level median house prices
+          and annual change across Victoria.
+        </p>
+        <div class="hero-meta" aria-live="polite">
+          <div>
+            <span>Data period</span>
+            <strong id="data-period">Loading</strong>
+          </div>
+          <div>
+            <span>Resource</span>
+            <strong id="resource-name">Fetching metadata...</strong>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel map-section map-feature" aria-labelledby="map-heading">
+        <div class="data-controls" aria-label="Dataset controls">
+          <label>
+            <span>View</span>
+            <select id="dataset-mode">
+              <option value="quarter">Single quarter</option>
+              <option value="year">Year summary</option>
+            </select>
+          </label>
+          <label id="quarter-control">
+            <span>Quarter</span>
+            <select id="quarter-select"></select>
+          </label>
+          <label id="year-control" hidden>
+            <span>Year</span>
+            <select id="year-select"></select>
+          </label>
+          <p id="data-warning" class="data-warning" aria-live="polite"></p>
+        </div>
+        <div class="section-heading map-heading">
+          <div>
+            <p class="section-kicker">Geography</p>
+            <h2 id="map-heading">Suburb map</h2>
+            <p id="map-count">Loading suburb coordinates...</p>
+          </div>
+          <div class="segmented-control" aria-label="Map metric">
+            <button type="button" class="active" data-map-mode="price">Price</button>
+            <button type="button" data-map-mode="change">Annual change</button>
+          </div>
+        </div>
+        <div class="map-shell">
+          <button type="button" id="fullscreen-map" class="map-fullscreen-button">Fullscreen</button>
+          <div id="suburb-map" class="suburb-map" role="img" aria-label="Map of suburb data points"></div>
+        </div>
+        <div id="map-legend" class="map-legend"></div>
+      </section>
+
+      <section class="stats-grid" aria-label="Summary statistics">
+        <article class="stat-tile">
+          <span>Total suburbs</span>
+          <strong id="total-suburbs">--</strong>
+        </article>
+        <article class="stat-tile">
+          <span>Median of prices</span>
+          <strong id="median-price">--</strong>
+        </article>
+        <article class="stat-tile">
+          <span>Highest median</span>
+          <strong id="highest-price">--</strong>
+        </article>
+        <article class="stat-tile">
+          <span>Strongest growth</span>
+          <strong id="strongest-growth">--</strong>
+        </article>
+      </section>
+
+      <section class="insight-grid" aria-label="Ranked suburb lists">
+        <article>
+          <h2>Highest median price suburbs</h2>
+          <ol id="highest-list" class="rank-list"></ol>
+        </article>
+        <article>
+          <h2>Lowest median price suburbs</h2>
+          <ol id="lowest-list" class="rank-list"></ol>
+        </article>
+        <article>
+          <h2>Strongest annual growth</h2>
+          <ol id="growth-list" class="rank-list"></ol>
+        </article>
+        <article>
+          <h2>Strongest annual decline</h2>
+          <ol id="decline-list" class="rank-list"></ol>
+        </article>
+      </section>
+
+      <section class="visual-grid" aria-label="Charts and visualisations">
+        <article class="panel chart-panel">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Top 10</p>
+              <h2>Top median prices</h2>
+            </div>
+            <p>Highest suburb medians in the cleaned class dataset.</p>
+          </div>
+          <div id="price-chart" class="bar-chart price-chart"></div>
+        </article>
+
+        <article class="panel chart-panel">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Annual change</p>
+              <h2>Growth and decline</h2>
+            </div>
+            <div class="segmented-control" aria-label="Annual change chart view">
+              <button type="button" class="active" data-change-mode="growth">Growth</button>
+              <button type="button" data-change-mode="decline">Decline</button>
+            </div>
+          </div>
+          <div id="change-chart" class="bar-chart change-chart"></div>
+        </article>
+
+        <article class="panel chart-panel distribution-panel">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Distribution</p>
+              <h2>Median price bands</h2>
+            </div>
+            <p>How suburbs are grouped by median house price.</p>
+          </div>
+          <div id="distribution-chart" class="bar-chart distribution-chart"></div>
+        </article>
+      </section>
+
+      <section class="panel table-section" aria-labelledby="table-heading">
+        <div class="section-heading table-heading">
+          <div>
+            <p class="section-kicker">Lookup</p>
+            <h2 id="table-heading">Suburb table</h2>
+            <p id="table-count">Loading suburbs...</p>
+          </div>
+          <label class="search-label">
+            <span>Search suburb</span>
+            <input id="search-input" type="search" placeholder="Start typing a suburb">
+          </label>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th><button type="button" data-sort="suburb">Suburb</button></th>
+                <th><button type="button" data-sort="median_price">Median price</button></th>
+                <th><button type="button" data-sort="annual_change_pct">Annual change</button></th>
+              </tr>
+            </thead>
+            <tbody id="suburb-table"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel notes-section" aria-labelledby="notes-heading">
+        <p class="section-kicker">Context</p>
+        <h2 id="notes-heading">Data notes</h2>
+        <ul>
+          <li>Median prices are suburb-level summaries, not individual property valuations.</li>
+          <li>Annual change percentages can be misleading where sales volumes are low.</li>
+          <li>This dashboard is an assessment visualisation and should not be treated as financial advice.</li>
+          <li>The class dataset intentionally uses only 3 variables: suburb, median_price, and annual_change_pct.</li>
+          <li>Map points use a separate static suburb centroid lookup on a simplified base and may not represent exact suburb boundaries.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <span>
+        Data:
+        <a href="https://discover.data.vic.gov.au/dataset/victorian-property-sales-report-median-house-by-suburb">
+          Victorian Government Data Vic
+        </a>
+      </span>
+      <span>
+        Map centroids:
+        <a href="https://www.matthewproctor.com/australian_postcodes">Australian Postcodes database</a>
+      </span>
+      <span>
+        Hero image:
+        <a href="https://www.pexels.com/photo/aerial-view-of-melbourne-suburban-road-and-skyline-38187103/">
+          Pexels
+        </a>
+      </span>
+      <a href="data/property-median-house-suburb.class.csv">Download class CSV</a>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
