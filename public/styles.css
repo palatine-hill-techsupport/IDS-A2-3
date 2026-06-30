@@ -486,6 +486,100 @@ main {
   z-index: 700;
 }
 
+.leaflet-control-container .leaflet-top,
+.leaflet-control-container .leaflet-bottom {
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.leaflet-top {
+  top: 0;
+}
+
+.leaflet-right {
+  right: 0;
+}
+
+.leaflet-bottom {
+  bottom: 0;
+}
+
+.leaflet-left {
+  left: 0;
+}
+
+.leaflet-control {
+  position: relative;
+  z-index: 800;
+  clear: both;
+  pointer-events: auto;
+}
+
+.leaflet-left .leaflet-control {
+  margin-left: 12px;
+}
+
+.leaflet-right .leaflet-control {
+  margin-right: 12px;
+}
+
+.leaflet-top .leaflet-control {
+  margin-top: 12px;
+}
+
+.leaflet-bottom .leaflet-control {
+  margin-bottom: 12px;
+}
+
+.leaflet-bar {
+  overflow: hidden;
+  border: 1px solid rgba(215, 225, 232, 0.95);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 22px rgba(23, 35, 51, 0.12);
+}
+
+.leaflet-bar a {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-bottom: 1px solid rgba(215, 225, 232, 0.95);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--slate);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.leaflet-bar a:last-child {
+  border-bottom: 0;
+}
+
+.leaflet-bar a:hover,
+.leaflet-bar a:focus-visible {
+  background: #eef7f8;
+  color: var(--ink);
+}
+
+.leaflet-bar a.leaflet-disabled {
+  color: var(--soft-muted);
+  cursor: default;
+  opacity: 0.55;
+}
+
+.leaflet-control-attribution {
+  max-width: min(520px, calc(100vw - 32px));
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--muted);
+  font-size: 0.7rem;
+  box-shadow: 0 4px 12px rgba(23, 35, 51, 0.08);
+}
+
 .leaflet-localBasemap-pane {
   transition: opacity 180ms ease;
 }

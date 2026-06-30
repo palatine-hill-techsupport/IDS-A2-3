@@ -423,10 +423,12 @@ function initialiseMap(rows, centroidData) {
     markerZoomAnimation: false,
     maxZoom: 12,
     minZoom: 7,
+    zoomControl: false,
     scrollWheelZoom: false,
     tap: false,
     preferCanvas: false
   }).setView(MELBOURNE_VIEW.center, MELBOURNE_VIEW.zoom);
+  L.control.zoom({ position: "topleft" }).addTo(map);
   map.createPane("labelPane");
   map.createPane("localBasemapPane");
   map.createPane("suburbMarkerPane");
