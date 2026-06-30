@@ -90,6 +90,10 @@ h1 {
   letter-spacing: 0;
 }
 
+.title-line {
+  display: block;
+}
+
 h2 {
   margin-bottom: 0;
   font-size: 1.18rem;
@@ -160,8 +164,33 @@ main {
 }
 
 .stat-tile {
+  position: relative;
+  overflow: hidden;
   min-height: 108px;
   padding: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(249, 252, 251, 0.96)),
+    var(--panel);
+}
+
+.stat-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sky-strong), var(--blue));
+}
+
+.stat-tile:nth-child(2)::before {
+  background: linear-gradient(90deg, var(--sand), var(--blue));
+}
+
+.stat-tile:nth-child(3)::before {
+  background: linear-gradient(90deg, var(--rose), var(--sand));
+}
+
+.stat-tile:nth-child(4)::before {
+  background: linear-gradient(90deg, #9ccdbb, var(--green));
 }
 
 .stat-tile strong {
@@ -183,21 +212,43 @@ main {
 }
 
 .rank-list {
+  counter-reset: rank;
   display: grid;
   gap: 10px;
   margin: 14px 0 0;
-  padding-left: 22px;
+  padding-left: 0;
+  list-style: none;
 }
 
 .rank-list li {
-  padding-left: 4px;
+  counter-increment: rank;
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 9px;
+  align-items: start;
+}
+
+.rank-list li::before {
+  content: counter(rank);
+  display: grid;
+  grid-row: 1 / span 2;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: #edf5f7;
+  color: var(--slate);
+  font-size: 0.76rem;
+  font-weight: 700;
 }
 
 .rank-list strong {
   display: block;
+  grid-column: 2;
 }
 
 .rank-list span {
+  grid-column: 2;
   color: var(--muted);
   font-size: 0.92rem;
 }
@@ -362,14 +413,19 @@ main {
 
 .map-shell {
   position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(215, 225, 232, 0.95);
+  border-radius: 8px;
+  background: #eaf3f6;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .suburb-map {
   width: 100%;
   height: clamp(420px, 56vw, 620px);
   overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  border: 0;
+  border-radius: inherit;
   background: #eaf3f6;
 }
 
@@ -378,8 +434,56 @@ main {
 }
 
 .leaflet-container {
+  position: relative;
   background: #eaf3f6;
   font: inherit;
+  overflow: hidden;
+}
+
+.leaflet-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-tile-container,
+.leaflet-pane > svg,
+.leaflet-pane > canvas,
+.leaflet-zoom-box,
+.leaflet-image-layer,
+.leaflet-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.leaflet-tile-pane {
+  z-index: 200;
+}
+
+.leaflet-overlay-pane {
+  z-index: 400;
+}
+
+.leaflet-shadow-pane {
+  z-index: 500;
+}
+
+.leaflet-marker-pane {
+  z-index: 600;
+}
+
+.leaflet-tooltip-pane {
+  z-index: 650;
+}
+
+.leaflet-popup-pane {
+  z-index: 700;
 }
 
 .leaflet-localBasemap-pane {
@@ -465,20 +569,26 @@ main {
 .map-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px 14px;
   align-items: center;
   margin-top: 12px;
   color: var(--muted);
   font-size: 0.88rem;
 }
 
-.legend-swatch {
-  width: 14px;
-  height: 14px;
+.legend-scale {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.legend-gradient {
+  width: min(170px, 36vw);
+  height: 10px;
+  border: 1px solid rgba(215, 225, 232, 0.9);
   border-radius: 999px;
-  display: inline-block;
-  margin-right: 5px;
-  vertical-align: -2px;
+  box-shadow: inset 0 1px 2px rgba(23, 35, 51, 0.12);
 }
 
 .table-heading {
@@ -530,7 +640,7 @@ th {
   position: sticky;
   top: 0;
   z-index: 1;
-  background: #edf5f7;
+  background: #e9f3f6;
   color: var(--slate);
   font-size: 0.84rem;
 }
@@ -568,6 +678,14 @@ th:nth-child(2),
 th:nth-child(3) {
   text-align: right;
   font-variant-numeric: tabular-nums;
+}
+
+tbody tr:nth-child(even) {
+  background: #fbfdfd;
+}
+
+tbody tr:hover {
+  background: #f1f7f8;
 }
 
 .positive {

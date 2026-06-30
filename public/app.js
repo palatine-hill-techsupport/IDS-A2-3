@@ -69,6 +69,10 @@ const BASEMAP_BOUNDS = [
   [-39.35, 140.75],
   [-33.75, 150.25]
 ];
+const MAP_COLOURS = {
+  low: "#2f6fbd",
+  high: "#d84f3f"
+};
 
 let mapState = null;
 const appState = {
@@ -296,14 +300,12 @@ function interpolateHex(start, end, amount) {
 
 function priceColour(value, min, max) {
   const ratio = clamp((value - min) / (max - min || 1));
-  return interpolateHex("9ccdbb", "2e4658", ratio);
+  return interpolateHex(MAP_COLOURS.low, MAP_COLOURS.high, ratio);
 }
 
 function changeColour(value, min, max) {
-  if (value < 0) {
-    return interpolateHex("e7bdc4", "a64a61", clamp(value / (min || -1)));
-  }
-  return interpolateHex("c8a46a", "34745f", clamp(value / (max || 1)));
+  const ratio = clamp((value - min) / (max - min || 1));
+  return interpolateHex(MAP_COLOURS.low, MAP_COLOURS.high, ratio);
 }
 
 function popupHtml(row) {
@@ -325,12 +327,26 @@ function mapMarkerStyle(row, mode, priceExtent, changeExtent) {
       : changeColour(row.annual_change_pct, changeExtent.min, changeExtent.max);
 
   return {
-    radius: 4.5 + ratio * 8,
+    radius: 6 + ratio * 9,
     color: "#ffffff",
     weight: 1,
     fillColor: colour,
-    fillOpacity: 0.76
+    fillOpacity: 0.52 + ratio * 0.34
   };
+}
+
+function mapLegendHtml(lowLabel, highLabel) {
+  return `
+    <div class="legend-scale">
+      <span>${escapeHtml(lowLabel)}</span>
+      <span
+        class="legend-gradient"
+        style="background: linear-gradient(90deg, ${MAP_COLOURS.low}, ${MAP_COLOURS.high})"
+        aria-hidden="true"
+      ></span>
+      <span>${escapeHtml(highLabel)}</span>
+    </div>
+  `;
 }
 
 function renderMapMarkers(mode = "price") {
@@ -347,15 +363,8 @@ function renderMapMarkers(mode = "price") {
 
   elements.mapLegend.innerHTML =
     mode === "price"
-      ? `
-        <span><span class="legend-swatch" style="background:#9ccdbb"></span>Lower median price</span>
-        <span><span class="legend-swatch" style="background:#2e4658"></span>Higher median price</span>
-      `
-      : `
-        <span><span class="legend-swatch" style="background:#a64a61"></span>Decline</span>
-        <span><span class="legend-swatch" style="background:#c8a46a"></span>Flat / modest change</span>
-        <span><span class="legend-swatch" style="background:#34745f"></span>Growth</span>
-      `;
+      ? mapLegendHtml("Lower median price", "Higher median price")
+      : mapLegendHtml("Lower annual change", "Higher annual change");
 
   setActiveButton(elements.mapModeButtons, mode, "mapMode");
 }
@@ -371,7 +380,7 @@ function mapRows(rows, centroidData) {
 
 function updateMapData(rows, centroidData) {
   if (!mapState) return;
-  const { L, map, markerLayer } = mapState;
+  const { L, markerLayer, markerRenderer } = mapState;
   const mappedRows = mapRows(rows, centroidData);
   elements.mapCount.textContent = `${mappedRows.length} of ${rows.length} suburbs plotted. The map opens on Greater Melbourne; pan or zoom out for regional suburbs.`;
   markerLayer.clearLayers();
@@ -386,7 +395,8 @@ function updateMapData(rows, centroidData) {
       ...style,
       bubblingMouseEvents: false,
       interactive: true,
-      renderer: map.options.renderer
+      pane: "suburbMarkerPane",
+      renderer: markerRenderer
     })
       .bindTooltip(popupHtml(row), {
         className: "map-tooltip",
@@ -413,19 +423,20 @@ function initialiseMap(rows, centroidData) {
     markerZoomAnimation: false,
     maxZoom: 12,
     minZoom: 7,
-    // Canvas keeps the 700+ suburb points responsive without hundreds of SVG nodes.
-    renderer: L.canvas({ padding: 0.35, tolerance: 8 }),
     scrollWheelZoom: false,
     tap: false,
-    preferCanvas: true
+    preferCanvas: false
   }).setView(MELBOURNE_VIEW.center, MELBOURNE_VIEW.zoom);
   map.createPane("labelPane");
   map.createPane("localBasemapPane");
+  map.createPane("suburbMarkerPane");
   const localBasemapPane = map.getPane("localBasemapPane");
   localBasemapPane.style.zIndex = 150;
   map.getPane("localBasemapPane").style.pointerEvents = "none";
-  map.getPane("labelPane").style.zIndex = 650;
+  map.getPane("labelPane").style.zIndex = 350;
   map.getPane("labelPane").style.pointerEvents = "none";
+  map.getPane("suburbMarkerPane").style.zIndex = 500;
+  map.getPane("suburbMarkerPane").style.pointerEvents = "auto";
 
   L.imageOverlay("assets/victoria-basemap.svg", BASEMAP_BOUNDS, {
     pane: "localBasemapPane",
@@ -433,14 +444,11 @@ function initialiseMap(rows, centroidData) {
     interactive: false
   }).addTo(map);
 
-  const baseTileLayer = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
     maxZoom: 12,
     minZoom: 7,
     attribution: "Tiles &copy; Esri, OpenStreetMap contributors"
   }).addTo(map);
-  baseTileLayer.once("tileload", () => {
-    localBasemapPane.style.opacity = "0";
-  });
 
   L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}", {
     maxZoom: 12,
@@ -451,11 +459,14 @@ function initialiseMap(rows, centroidData) {
 
   const markerLayer = L.layerGroup().addTo(map);
   const labelLayer = L.layerGroup().addTo(map);
+  // SVG markers stay visible above the tile panes and are still light enough for this static dataset.
+  const markerRenderer = L.svg({ pane: "suburbMarkerPane", padding: 0.35 });
 
   mapState = {
     L,
     map,
     markerLayer,
+    markerRenderer,
     labelLayer,
     mappedRows: [],
     markers: [],
